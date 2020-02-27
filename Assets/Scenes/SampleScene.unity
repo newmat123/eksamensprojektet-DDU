@@ -390,6 +390,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parallaxEffectMultiplier: {x: 0.5, y: 0.1}
+  infinytiX: 1
+  infinitiY: 1
 --- !u!1 &316576254
 GameObject:
   m_ObjectHideFlags: 0

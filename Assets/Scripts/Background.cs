@@ -6,11 +6,14 @@ public class Background : MonoBehaviour
 {
 
     [SerializeField] private Vector2 parallaxEffectMultiplier;
+    [SerializeField] private bool infinytiX;
+    [SerializeField] private bool infinitiY;
 
     private Transform cameraTrans;
     private Vector3 lastCamPos;
     private float textureSizeX;
     private float textureSizeY;
+
 
     void Start()
     {
@@ -22,22 +25,26 @@ public class Background : MonoBehaviour
         textureSizeY = texture.width / sprite.pixelsPerUnit;
     }
 
-    
+
     void LateUpdate()
     {
         Vector3 deltaMovement = cameraTrans.position - lastCamPos;
         transform.position += new Vector3(deltaMovement.x * parallaxEffectMultiplier.x, deltaMovement.y * parallaxEffectMultiplier.y);
         lastCamPos = cameraTrans.position;
-
-        if(Mathf.Abs(cameraTrans.position.x - transform.position.x) >= textureSizeX)
-        {
-            float offsetPositionX = (cameraTrans.position.x - transform.position.x) % textureSizeX;
-            transform.position = new Vector3(cameraTrans.position.x + offsetPositionX, transform.position.y);
+        if (infinytiX) { 
+            if (Mathf.Abs(cameraTrans.position.x - transform.position.x) >= textureSizeX)
+            {
+                float offsetPositionX = (cameraTrans.position.x - transform.position.x) % textureSizeX;
+                transform.position = new Vector3(cameraTrans.position.x + offsetPositionX, transform.position.y);
+            }
         }
-        if (Mathf.Abs(cameraTrans.position.y - transform.position.y) >= textureSizeX)
+        if (infinitiY)
         {
-            float offsetPositionY = (cameraTrans.position.y - transform.position.y) % textureSizeY;
-            transform.position = new Vector3(cameraTrans.position.x, transform.position.y + offsetPositionY);
+            if (Mathf.Abs(cameraTrans.position.y - transform.position.y) >= textureSizeX)
+            {
+                float offsetPositionY = (cameraTrans.position.y - transform.position.y) % textureSizeY;
+                transform.position = new Vector3(cameraTrans.position.x, transform.position.y + offsetPositionY);
+            }
         }
     }
 }
