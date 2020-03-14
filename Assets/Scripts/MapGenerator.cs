@@ -5,6 +5,8 @@ using UnityEngine;
 public class MapGenerator : MonoBehaviour
 {
 
+    public Vector2 startPoint;
+
     public GameObject Player;
 
     public Transform[] startPoses;
@@ -22,6 +24,8 @@ public class MapGenerator : MonoBehaviour
     private bool generationStop;
 
     public LayerMask room;
+
+    private int upCounter;
 
     private void Start()
     {
@@ -55,6 +59,7 @@ public class MapGenerator : MonoBehaviour
 
         if(direction == 1 || direction == 2)
         {// Move right
+            upCounter = 0;
             if(transform.position.x < maxX)
             {
                 Vector2 newPos = new Vector2(transform.position.x + moveAmount, transform.position.y);
@@ -81,6 +86,7 @@ public class MapGenerator : MonoBehaviour
         }
         else if(direction == 3 || direction == 4)
         {//move left
+            upCounter = 0;
             if (transform.position.x > minX)
             {
                 Vector2 newPos = new Vector2(transform.position.x - moveAmount, transform.position.y);
@@ -99,18 +105,28 @@ public class MapGenerator : MonoBehaviour
         }
         else if (direction == 5)
         {//move up
+            upCounter++;
+
             if(transform.position.y < maxY)
             {
-
-                //dose not work 
+                
                 Collider2D roomDetection = Physics2D.OverlapCircle(transform.position, 1, room);
-                if(roomDetection.GetComponent<RoomType>().type != 1 && roomDetection.GetComponent<RoomType>().type != 3)
+                if(roomDetection.GetComponent<RoomType>().type != 2 || roomDetection.GetComponent<RoomType>().type != 3)
                 {
                     roomDetection.GetComponent<RoomType>().DestroyObj();
-
-                    int randTopRoom = Random.Range(2, 4);
-
-                    Instantiate(rooms[randTopRoom], transform.position, Quaternion.identity);
+                    if (upCounter >= 2)
+                    {
+                        Instantiate(rooms[3], transform.position, Quaternion.identity);
+                    }
+                    else
+                    {
+                        int randTopRoom = Random.Range(1, 4);
+                        if(randTopRoom == 2)
+                        {
+                            randTopRoom = 1;
+                        }
+                        Instantiate(rooms[randTopRoom], transform.position, Quaternion.identity);
+                    }
                 }
 
                 Vector2 newPos = new Vector2(transform.position.x, transform.position.y + moveAmount);
@@ -120,11 +136,42 @@ public class MapGenerator : MonoBehaviour
                 Instantiate(rooms[rand], transform.position, Quaternion.identity);
 
                 direction = Random.Range(1, 6);
+                
             }
             else
             {
                 generationStop = true;
+                transform.position = startPoint;
+                fillUp();
             }
         }
+    }
+
+    public void fillUp()
+    {
+
+        Collider2D roomDetection = Physics2D.OverlapCircle(transform.position, 1, room);
+        if(roomDetection == null)
+        {
+            int rand = Random.Range(0, rooms.Length);
+            Instantiate(rooms[rand], transform.position, Quaternion.identity);
+        }
+
+        if(transform.position.x < maxX)
+        {
+            Vector2 newPos = new Vector2(transform.position.x + moveAmount, transform.position.y);
+            transform.position = newPos;
+        }
+        else
+        {
+            Vector2 newPos = new Vector2(startPoint.x, transform.position.y + moveAmount);
+            transform.position = newPos;
+        }
+
+        if(transform.position.x <= maxX && transform.position.y <= maxY)
+        {
+            fillUp();
+        }
+
     }
 }

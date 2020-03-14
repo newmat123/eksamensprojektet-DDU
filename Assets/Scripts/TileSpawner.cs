@@ -10,7 +10,8 @@ public class TileSpawner : MonoBehaviour
     private void Start()
     {
         int rand = Random.Range(0, Tiles.Length);
-        Instantiate(Tiles[rand], transform.position, Quaternion.identity);
+        GameObject instance = (GameObject)Instantiate(Tiles[rand], transform.position, Quaternion.identity);
+        instance.transform.parent = transform;
     }
 
 }
