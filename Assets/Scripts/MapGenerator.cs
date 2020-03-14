@@ -65,7 +65,7 @@ public class MapGenerator : MonoBehaviour
                 Vector2 newPos = new Vector2(transform.position.x + moveAmount, transform.position.y);
                 transform.position = newPos;
 
-                int rand = Random.Range(0, rooms.Length);
+                int rand = Random.Range(0, 4);
                 Instantiate(rooms[rand], transform.position, Quaternion.identity);
 
                 direction = Random.Range(1, 6);
@@ -92,7 +92,7 @@ public class MapGenerator : MonoBehaviour
                 Vector2 newPos = new Vector2(transform.position.x - moveAmount, transform.position.y);
                 transform.position = newPos;
 
-                int rand = Random.Range(0, rooms.Length);
+                int rand = Random.Range(0, 4);
                 Instantiate(rooms[rand], transform.position, Quaternion.identity);
 
                 direction = Random.Range(3, 6);
