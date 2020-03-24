@@ -15,9 +15,6 @@ public class MapGenerator : MonoBehaviour
     private int direction;
     public float moveAmount = 10;
 
-    private float timeBtwRoom;
-    public float StartTimeBtwRoom = 0.25f;
-
     public float maxX;
     public float minX;
     public float maxY;
@@ -40,24 +37,6 @@ public class MapGenerator : MonoBehaviour
        Move();
     }
 
-    private void Update()
-    {
-        /*
-        if (!generationStop)
-        {
-            if (timeBtwRoom <= 0)
-            {
-                Move();
-                timeBtwRoom = StartTimeBtwRoom;
-            }
-            else
-            {
-                timeBtwRoom -= Time.deltaTime;
-            }
-        }
-        */
-        
-    }
 
     private void Move()
     {
