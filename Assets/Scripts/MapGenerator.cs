@@ -36,10 +36,13 @@ public class MapGenerator : MonoBehaviour
         Player.transform.position = startPoses[randSTPos].position;
 
         direction = Random.Range(1, 6);
+
+       Move();
     }
 
     private void Update()
     {
+        /*
         if (!generationStop)
         {
             if (timeBtwRoom <= 0)
@@ -52,6 +55,8 @@ public class MapGenerator : MonoBehaviour
                 timeBtwRoom -= Time.deltaTime;
             }
         }
+        */
+        
     }
 
     private void Move()
@@ -59,9 +64,9 @@ public class MapGenerator : MonoBehaviour
 
         if(direction == 1 || direction == 2)
         {// Move right
-            upCounter = 0;
             if(transform.position.x < maxX)
             {
+                upCounter = 0;
                 Vector2 newPos = new Vector2(transform.position.x + moveAmount, transform.position.y);
                 transform.position = newPos;
 
@@ -82,13 +87,13 @@ public class MapGenerator : MonoBehaviour
             {
                 direction = 5;
             }
-            
         }
         else if(direction == 3 || direction == 4)
         {//move left
-            upCounter = 0;
             if (transform.position.x > minX)
             {
+                upCounter = 0;
+
                 Vector2 newPos = new Vector2(transform.position.x - moveAmount, transform.position.y);
                 transform.position = newPos;
 
@@ -144,6 +149,10 @@ public class MapGenerator : MonoBehaviour
                 transform.position = startPoint;
                 fillUp();
             }
+        }
+        if (!generationStop)
+        {
+            Move();
         }
     }
 
