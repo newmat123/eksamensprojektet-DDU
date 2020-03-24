@@ -635,7 +635,6 @@ MonoBehaviour:
   - {fileID: 5704794916730910060, guid: 7ae40ae231ddc3040bde7b267f85fc18, type: 3}
   - {fileID: 4547080190194438437, guid: cd12db7f8cb2c6544b802517665108ba, type: 3}
   moveAmount: 10
-  StartTimeBtwRoom: 0
   maxX: 95
   minX: 5
   maxY: 195
