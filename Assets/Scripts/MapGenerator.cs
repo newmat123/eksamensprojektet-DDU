@@ -125,7 +125,7 @@ public class MapGenerator : MonoBehaviour
             {
                 generationStop = true;
                 transform.position = startPoint;
-                //fillUp();
+                fillUp();
             }
         }
         if (!generationStop)
