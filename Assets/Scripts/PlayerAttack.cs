@@ -5,37 +5,45 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
 
-    private float timeBtwAttacks;
-    public float startTimeBtwAttack;
-    public Transform attackPos;
+
+    public Transform attackPoint;
     public LayerMask whatIsEnemies;
-    public float attackRange;
+    public float attackRange =0.5f;
     public int damage;
 
-    // Update is called once per frame
+    private Animator anim;
+
+    public float attackRate = 2f;
+    private float nextAttackTime = 0f;
+
+    void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
     void Update()
     {
-        if (timeBtwAttacks <= 0)
+        if (Time.time >= nextAttackTime)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                timeBtwAttacks = startTimeBtwAttack;
-                Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position, attackRange, whatIsEnemies);
-                for (int i = 0; i < enemiesToDamage.Length; i++)
-                {
-                    enemiesToDamage[i].GetComponent<Enemy>().TakeDamage(damage);
-                       
-                }
+                Attack();
+                nextAttackTime = Time.time + 1f / attackRate;
             }
+
         }
-        else
+    }
+    public void Attack()
+    {
+        anim.SetTrigger("attack");
+        Collider2D[] hitEnemies =Physics2D.OverlapCircleAll(attackPoint.position, attackRange, whatIsEnemies);
+        foreach (Collider2D enemy in hitEnemies)
         {
-            timeBtwAttacks -= Time.deltaTime;
+            enemy.GetComponent<Enemy>().TakeDamage(damage);
         }
     }
     void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPos.position, attackRange);
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }

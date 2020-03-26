@@ -5,29 +5,41 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int health;
+    private int currentHealth;
     public float speed;
 
     private Animator anim;
 
-    // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
-        anim.SetBool("isRunning", true);
+        //Sætter modstanderens liv til variablen healths værdi
+        currentHealth = health;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-        }
+        
     }
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
-        Debug.Log("Damage TAKEN!");
+        //Gør så modstanderen tager skade
+        currentHealth -= damage;
+        //Spiller skade animationen
+        anim.SetTrigger("Hurt");
+       
+        if (currentHealth <= 0)
+        {
+            die();
+        }
+    }
+
+    public void die()
+    {
+            //Spiller døds animationen
+            anim.SetBool("IsDead", true);
+            //Gør så selve scriptet er slået fra
+            Destroy(gameObject);
     }
 }
