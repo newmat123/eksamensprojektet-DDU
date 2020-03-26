@@ -95,23 +95,22 @@ public class MapGenerator : MonoBehaviour
             {
                 
                 Collider2D roomDetection = Physics2D.OverlapCircle(transform.position, 1, room);
-                if(roomDetection.GetComponent<RoomType>().type != 2 || roomDetection.GetComponent<RoomType>().type != 3)
+                roomDetection.GetComponent<RoomType>().DestroyObj();
+
+                if (upCounter >= 2)
                 {
-                    roomDetection.GetComponent<RoomType>().DestroyObj();
-                    if (upCounter >= 2)
-                    {
-                        Instantiate(rooms[3], transform.position, Quaternion.identity);
-                    }
-                    else
-                    {
-                        int randTopRoom = Random.Range(1, 4);
-                        if(randTopRoom == 2)
-                        {
-                            randTopRoom = 1;
-                        }
-                        Instantiate(rooms[randTopRoom], transform.position, Quaternion.identity);
-                    }
+                    Instantiate(rooms[3], transform.position, Quaternion.identity);
                 }
+                else
+                {
+                    int randTopRoom = Random.Range(1, 4);
+                    if(randTopRoom == 2)
+                    {
+                        randTopRoom = 1;
+                    }
+                    Instantiate(rooms[randTopRoom], transform.position, Quaternion.identity);
+                }
+                
 
                 Vector2 newPos = new Vector2(transform.position.x, transform.position.y + moveAmount);
                 transform.position = newPos;
@@ -126,7 +125,7 @@ public class MapGenerator : MonoBehaviour
             {
                 generationStop = true;
                 transform.position = startPoint;
-                fillUp();
+                //fillUp();
             }
         }
         if (!generationStop)
