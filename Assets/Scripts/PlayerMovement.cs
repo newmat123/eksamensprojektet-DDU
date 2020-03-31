@@ -65,11 +65,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded == true && rb.velocity.y == 0)   //Hvis spilleren står på jorden og ikke bevæger sig opad
         {
-            extraJumps = extraJumpsValue; //Nulstilles antallet af hop
+            anim.SetBool("isGrounded", true);
+            extraJumps = extraJumpsValue; //Nulstiller antallet af hop
         }
         if (Input.GetKeyDown(KeyCode.Space) && extraJumps > 0)   //Hvis spilleren trykker på "W" og har flere hop
         {
-            anim.SetTrigger("jump");
+            anim.SetTrigger("jump");                 //Bruges til at animere spilleren
+            anim.SetBool("isGrounded", false);
             rb.velocity = Vector2.up * jumpForce;    //Sørger for at spilleren kan hoppe
             extraJumps--;                            //Trækker et jump fra
         }
