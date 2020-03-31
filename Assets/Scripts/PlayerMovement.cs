@@ -50,14 +50,14 @@ public class PlayerMovement : MonoBehaviour
         }
 
 
-        //Flipper spilleren
-        if (facingRight == false && moveInput > 0)
+        
+        if (facingRight == false && moveInput > 0)      //Checker om spilleren vender mod venstre og bevæger sig mod højre 
         {
-            flip();
+            flip();                                     //Vender spilleren
         }
-        if (facingRight == true && moveInput < 0)
+        if (facingRight == true && moveInput < 0)       //Checker om spilleren vender mod højre og bevæger sig mod venstre
         {
-            flip();
+            flip();                                     //Vender spilleren
         }
     }
 
@@ -65,25 +65,24 @@ public class PlayerMovement : MonoBehaviour
     {
         if (isGrounded == true && rb.velocity.y == 0)   //Hvis spilleren står på jorden og ikke bevæger sig opad
         {
-            anim.SetBool("isGrounded", true);
-            extraJumps = extraJumpsValue; //Nulstiller antallet af hop
+            anim.SetBool("isGrounded", true);                    //Gør så det ligner at spilleren kun kan løbe når man er på jorden
+            extraJumps = extraJumpsValue;                        //Nulstiller antallet af hop
         }
         if (Input.GetKeyDown(KeyCode.Space) && extraJumps > 0)   //Hvis spilleren trykker på "W" og har flere hop
         {
-            anim.SetTrigger("jump");                 //Bruges til at animere spilleren
-            anim.SetBool("isGrounded", false);
-            rb.velocity = Vector2.up * jumpForce;    //Sørger for at spilleren kan hoppe
-            extraJumps--;                            //Trækker et jump fra
+            anim.SetTrigger("jump");                             //Bruges til at animere spilleren
+            anim.SetBool("isGrounded", false);                   //Gør så det ikke ligner at spilleren løber når man hopper
+            rb.velocity = Vector2.up * jumpForce;                //Sørger for at spilleren kan hoppe
+            extraJumps--;                                        //Trækker et jump fra
         }
     }
 
     void flip()
     {
-        //Funktion der flipper spilleren
-        facingRight = !facingRight;
-        Vector3 Scaler = transform.localScale;
-        Scaler.x *= -1;
-        transform.localScale = Scaler;
+        Vector3 Scaler = transform.localScale;   //Henter spillerens X,Y,Z scale
+        Scaler.x = Scaler.x * -1;                //vender spilleren på x-koordinaten
+        facingRight = !facingRight;              //Sætter variablen "facingRight" til true eller false
+        transform.localScale = Scaler;           //opdaterer spillerens scale til at være den nye scale
         
     }
 }
