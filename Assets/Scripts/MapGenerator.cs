@@ -46,7 +46,7 @@ public class MapGenerator : MonoBehaviour
             if(transform.position.x < maxX)
             {
                 upCounter = 0;
-                Vector2 newPos = new Vector2(transform.position.x + moveAmount, transform.position.y);
+                Vector2 newPos = new Vector2(transform.position.x + (moveAmount * 3f), transform.position.y);
                 transform.position = newPos;
 
                 int rand = Random.Range(0, 4);
@@ -73,7 +73,7 @@ public class MapGenerator : MonoBehaviour
             {
                 upCounter = 0;
 
-                Vector2 newPos = new Vector2(transform.position.x - moveAmount, transform.position.y);
+                Vector2 newPos = new Vector2(transform.position.x - (moveAmount * 3f), transform.position.y);
                 transform.position = newPos;
 
                 int rand = Random.Range(0, 4);
@@ -146,7 +146,7 @@ public class MapGenerator : MonoBehaviour
 
         if(transform.position.x < maxX)
         {
-            Vector2 newPos = new Vector2(transform.position.x + moveAmount, transform.position.y);
+            Vector2 newPos = new Vector2(transform.position.x + (moveAmount * 3f), transform.position.y);
             transform.position = newPos;
         }
         else
