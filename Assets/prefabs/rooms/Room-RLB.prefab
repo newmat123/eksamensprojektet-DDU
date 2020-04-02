@@ -583,6 +583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 1
+  roomDis: 15
 --- !u!61 &784570362060072621
 BoxCollider2D:
   m_ObjectHideFlags: 0
