@@ -13,6 +13,7 @@ public class MapGenerator : MonoBehaviour
     public GameObject[] rooms;
 
     private int direction;
+    private int oldRoomDis;
     public float moveAmount = 10;
 
     public float maxX;
@@ -29,6 +30,7 @@ public class MapGenerator : MonoBehaviour
         int randSTPos = Random.Range(0, startPoses.Length);
         transform.position = startPoses[randSTPos].position;
         Instantiate(rooms[0], transform.position, Quaternion.identity);
+        oldRoomDis = rooms[0].GetComponent<RoomType>().roomDis;
 
         Player.transform.position = startPoses[randSTPos].position;
 
@@ -46,11 +48,17 @@ public class MapGenerator : MonoBehaviour
             if(transform.position.x < maxX)
             {
                 upCounter = 0;
-                Vector2 newPos = new Vector2(transform.position.x + moveAmount, transform.position.y);
-                transform.position = newPos;
 
                 int rand = Random.Range(0, 4);
+                int moveDis = oldRoomDis + rooms[rand].GetComponent<RoomType>().roomDis;
+
+                Vector2 newPos = new Vector2(transform.position.x + moveDis, transform.position.y);
+                transform.position = newPos;
+
+                oldRoomDis = rooms[rand].GetComponent<RoomType>().roomDis;
+
                 Instantiate(rooms[rand], transform.position, Quaternion.identity);
+
 
                 direction = Random.Range(1, 6);
                 if(direction == 3)
@@ -73,10 +81,14 @@ public class MapGenerator : MonoBehaviour
             {
                 upCounter = 0;
 
-                Vector2 newPos = new Vector2(transform.position.x - moveAmount, transform.position.y);
+                int rand = Random.Range(0, 4);
+                int moveDis = oldRoomDis + rooms[rand].GetComponent<RoomType>().roomDis;
+
+                Vector2 newPos = new Vector2(transform.position.x - moveDis, transform.position.y);
                 transform.position = newPos;
 
-                int rand = Random.Range(0, 4);
+                oldRoomDis = rooms[rand].GetComponent<RoomType>().roomDis;
+
                 Instantiate(rooms[rand], transform.position, Quaternion.identity);
 
                 direction = Random.Range(3, 6);
@@ -146,7 +158,7 @@ public class MapGenerator : MonoBehaviour
 
         if(transform.position.x < maxX)
         {
-            Vector2 newPos = new Vector2(transform.position.x + moveAmount, transform.position.y);
+            Vector2 newPos = new Vector2(transform.position.x + (moveAmount * 3f), transform.position.y);
             transform.position = newPos;
         }
         else
