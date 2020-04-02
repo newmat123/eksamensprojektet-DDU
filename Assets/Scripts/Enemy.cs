@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour
     private Animator anim;          //Modstanderens animator
     private Rigidbody2D rb;
 
+    private bool isRunning = false; //Bruges til at animere modstanderen når han løber
+
     void Start()
     {
         anim = GetComponent<Animator>();     //Henter modstanderens animator, så komponentet kan ændres
@@ -25,51 +27,50 @@ public class Enemy : MonoBehaviour
     {
         if (hasTarget)
         {
-            //get distance between me and my target
-            float distance = Vector3.Distance(transform.position, target.transform.position);
-            // am I further than 2 units away
-            if (distance > 2)
+           
+            float distance = Vector2.Distance(transform.position, target.transform.position); //Finder distancen mellem modstanderen og spilleren
+            
+            if (distance > 2)               //Hvis modstanderen er mere end 2 units væk fra spilleren
             {
-                // I am over 2 units away
-                follow(target.transform); // do a follow
+                follow(target.transform);   //Følg efter spilleren
             }
+
+
         }
     }
     
-    // if anything starts to collide with me I will run this method
-    private void OnTriggerEnter2D(Collider2D collision)
+   
+    private void OnTriggerEnter2D(Collider2D collision) //Hvis modstanderen rammer en collidere
     {
-        if (collision.tag.Equals("Player"))
-        {    // is the other object the player
-            target = collision.gameObject;      // it is so set him as my target
-            hasTarget = true;   // I have a target
+        if (collision.tag.Equals("Player"))     //Hvis modstanderens collider rammer spillerens
+        {                                       
+            target = collision.gameObject;      //Bliver det modstanderens mål
+            hasTarget = true;                   //Sætter boolen til true
+            anim.SetBool("isRunning", true);    //Gør så modstanderen kan animeres
         }
     }
-
-    // if something is no longer coliiding with me I will run this code
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit2D(Collider2D collision) //Hvis modstanderen ikke collider med noget længere
     {
-        if (collision.tag.Equals("Player"))
+        if (collision.tag.Equals("Player"))             //Hvis modstanderens collider ikke rammer spillerens længere
         {
-            target = null;
-            hasTarget = false;
-            rb.velocity = new Vector2(0,0);
+            target = null;                              //Gør så modstanderen ikke har noget target længere
+            hasTarget = false;                          //Sætter boolen til false
+            rb.velocity = new Vector2(0,0);             //Stopper modstanderens bevægelser
+            anim.SetBool("isRunning", false);
         }
     }
 
     private void follow(Transform target)
     {
         // add force to my rigid body to make me move
-        rb.velocity = (target.transform.position - transform.position).normalized * speed;
+        rb.velocity = new Vector2((target.transform.position.x - transform.position.x)*speed*Time.deltaTime,0f);
     }
 
     public void TakeDamage(int damage)
     {
-        //Gør så modstanderen tager skade
-        currentHealth -= damage;
-        //Spiller skade animationen
-        anim.SetTrigger("Hurt");
-       
+        currentHealth -= damage;    //Gør så modstanderen tager skade
+        anim.SetTrigger("Hurt");    //Spiller skade animationen
+
         if (currentHealth <= 0)
         {
             die();
@@ -83,4 +84,5 @@ public class Enemy : MonoBehaviour
             //Gør så selve scriptet er slået fra
             Destroy(gameObject);
     }
+
 }

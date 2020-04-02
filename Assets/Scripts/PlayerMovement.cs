@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     bool facingRight = true;
     bool isRunning = false;
+    private SpriteRenderer spriteRenderer;
 
     private bool isGrounded;        //Checker om spilleren står på jorden
     public Transform groundCheck;   //Position som bruges til at tjekke om spilleren står på jorden
@@ -27,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
         extraJumps = extraJumpsValue;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        // get a reference to the SpriteRenderer component on this gameObject
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -51,13 +54,13 @@ public class PlayerMovement : MonoBehaviour
 
 
         
-        if (facingRight == false && moveInput > 0)      //Checker om spilleren vender mod venstre og bevæger sig mod højre 
+        if ( moveInput > 0)                 //Checker om spilleren bevæger sig mod højre 
         {
-            flip();                                     //Vender spilleren
+            spriteRenderer.flipX = false;   //Vender spilleren
         }
-        if (facingRight == true && moveInput < 0)       //Checker om spilleren vender mod højre og bevæger sig mod venstre
+        if ( moveInput < 0)                 //Checker om spilleren bevæger sig mod venstre
         {
-            flip();                                     //Vender spilleren
+            spriteRenderer.flipX = true;    //Vender spilleren
         }
     }
 
