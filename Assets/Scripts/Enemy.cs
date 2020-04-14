@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public int health;              //Modstanderens standard mængde liv
-    private int currentHealth;      //Modstanderens nuværende liv
     public float speed;             //Modstanderens hastighed
+    public int damage;
+    private bool isRunning = false;
 
     private bool hasTarget = false; // checker om modstanderen har et target
     private GameObject target;      // Modstanderens target
 
-    private Animator anim;          //Modstanderens animator
+    public float minAttackRange = 2.5f; //mindste distance før at modstanderen vil angribe
+    public float attackRate = 2f;
+    private float nextAttackTime = 0f;
+
+
+    private Animator anim;        //refference til animatoren
     private Rigidbody2D rb;
 
-    public float minAttackRange = 2.5f; //mindste distance før at modstanderen vil angribe
-
-    private bool isRunning = false; //Bruges til at animere modstanderen når han løber
-
+    public int health = 100;        //Modstanderens standard mængde liv
+    private int currentHealth;      //Modstanderens nuværende liv
+   
     private SpriteRenderer spriteRenderer;
-
     //Retning variable
     private Vector2 direction;
     public Vector2 Direction
@@ -34,17 +37,17 @@ public class Enemy : MonoBehaviour
             direction = value;
         }
     }
-
-    void Start()
+    
+    protected virtual void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();     //Henter modstanderens animator, så komponentet kan ændres
         currentHealth = health;              //Sætter modstanderens liv til variablen healths værdi
         rb = GetComponent<Rigidbody2D>();    //Henter modstanderens Rigidbody, så komponentet kan ændres
     }
-
     void Update()
     {
+
         if (hasTarget)
         {
             //Finder spillerens position
@@ -64,11 +67,7 @@ public class Enemy : MonoBehaviour
                 {
                     spriteRenderer.flipX = false;       //Vender spilleren
                 }
-                if (distance < minAttackRange)
-                {
-                    rb.velocity = new Vector2(0, 0);   //Stopper modstanderens bevægelser
-                    anim.SetTrigger("attack");
-                }
+                
             }
 
         }
@@ -100,24 +99,29 @@ public class Enemy : MonoBehaviour
         // add force to my rigid body to make me move
         rb.velocity = new Vector2((target.transform.position.x - transform.position.x)*speed*Time.deltaTime,0f);
     }
-
     public void TakeDamage(int damage)
     {
+        Debug.Log(damage);
         currentHealth -= damage;    //Gør så modstanderen tager skade
         anim.SetTrigger("Hurt");    //Spiller skade animationen
 
         if (currentHealth <= 0)
         {
-            die();
+            StartCoroutine(die());
         }
     }
 
-    public void die()
+    IEnumerator die()
     {
-            //Spiller døds animationen
-            anim.SetBool("IsDead", true);
-            //Gør så selve scriptet er slået fra
-            Destroy(gameObject);
+        //Spiller døds animationen
+        anim.SetBool("IsDead", true);
+        yield return new WaitForSeconds(2);
+        Destroy(gameObject);
+        
+
     }
+
+
+
 
 }

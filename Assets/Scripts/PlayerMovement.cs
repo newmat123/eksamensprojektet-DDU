@@ -8,14 +8,20 @@ public class PlayerMovement : MonoBehaviour
     public float jumpForce;         //Spillerens hoppe styrke
     private float moveInput;        //Spillerens input
 
-    Rigidbody2D rb;
-    Animator anim;
+    private bool facingRight = true;
+    private bool isRunning = false;
 
-    bool facingRight = true;
-    bool isRunning = false;
+    public int damage;
+
+    private Animator anim;        //refference til animatoren
+    private Rigidbody2D rb;
+
+    public int health = 100;        //Modstanderens standard mængde liv
+    private int currentHealth;      //Modstanderens nuværende liv
+
     private SpriteRenderer spriteRenderer;
 
-    private bool isGrounded;        //Checker om spilleren står på jorden
+    private bool isGrounded = true;        //Checker om spilleren står på jorden
     public Transform groundCheck;   //Position som bruges til at tjekke om spilleren står på jorden
     public float checkRadius;       //Radius som bruges til at tjekke om spilleren står på jorden
     public LayerMask whatIsGround;  //Finder ud af hvilket lag der er jorden
@@ -23,15 +29,14 @@ public class PlayerMovement : MonoBehaviour
     private int extraJumps;
     public int extraJumpsValue;     //Spillerens antal hop
 
-    private void Start()
-    {
-        extraJumps = extraJumpsValue;
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        // get a reference to the SpriteRenderer component on this gameObject
-        spriteRenderer = GetComponent<SpriteRenderer>();
-    }
 
+    void Start()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();     //Henter modstanderens animator, så komponentet kan ændres
+        currentHealth = health;              //Sætter modstanderens liv til variablen healths værdi
+        rb = GetComponent<Rigidbody2D>();    //Henter modstanderens Rigidbody, så komponentet kan ændres
+    }
     private void FixedUpdate()
     {
         //Checker om spilleren står på jorden
@@ -80,12 +85,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    void flip()
+    public void TakeDamage(int damage)
     {
-        Vector3 Scaler = transform.localScale;   //Henter spillerens X,Y,Z scale
-        Scaler.x = Scaler.x * -1;                //vender spilleren på x-koordinaten
-        facingRight = !facingRight;              //Sætter variablen "facingRight" til true eller false
-        transform.localScale = Scaler;           //opdaterer spillerens scale til at være den nye scale
-        
+        Debug.Log(damage);
+        currentHealth -= damage;    //Gør så modstanderen tager skade
+        anim.SetTrigger("Hurt");    //Spiller skade animationen
     }
 }

@@ -281,8 +281,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2600c13f8a80f6e42a584cacd67d3f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
   health: 100
   speed: 70
+  minAttackRange: 2.08
 --- !u!212 &1123470878
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -361,7 +363,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.08927345, y: 0.6459701}
+  m_Offset: {x: 0.028074265, y: 0.6459701}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -372,7 +374,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8082237, y: 1.1846862}
+  m_Size: {x: 0.68582535, y: 1.1846862}
   m_EdgeRadius: 0
 --- !u!50 &1123470881
 Rigidbody2D:
@@ -449,6 +451,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5327184609877409652, guid: d6c1df432eda70b418aa3551deaa01b6,
+        type: 3}
+      propertyPath: health
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8915772541363479312, guid: d6c1df432eda70b418aa3551deaa01b6,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.015300751
+      objectReference: {fileID: 0}
+    - target: {fileID: 8915772541363479312, guid: d6c1df432eda70b418aa3551deaa01b6,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 3.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 8915772541363479312, guid: d6c1df432eda70b418aa3551deaa01b6,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 3.875
+      objectReference: {fileID: 0}
+    - target: {fileID: 8915772541363479312, guid: d6c1df432eda70b418aa3551deaa01b6,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.63207245
+      objectReference: {fileID: 0}
     - target: {fileID: 8915772541363479314, guid: d6c1df432eda70b418aa3551deaa01b6,
         type: 3}
       propertyPath: m_Sprite

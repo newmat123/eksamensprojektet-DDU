@@ -4,27 +4,20 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-
-
+    private Animator anim;        //refference til animatoren
+    public int damage;
     public Transform attackPoint;
     public LayerMask whatIsEnemies;
     public float attackRange =0.5f;
-    public int damage;
-
-    private Animator anim;
-
     public float attackRate = 2f;
     private float nextAttackTime = 0f;
 
-    public int playerHealth;              //Spillerens standard mængde liv
-    private int playerCurrentHealth;      //Spillerens nuværende liv
-
-    void Start()
+    protected virtual void Start()
     {
         anim = GetComponent<Animator>();
-        playerCurrentHealth = playerHealth;              //Sætter spillerens liv til variablen playerHealths værdi
     }
-    void Update()
+
+        void Update()
     {
         if (Time.time >= nextAttackTime)
         {
