@@ -3,10 +3,10 @@ guid: eebf217dcce0853488b2a4dce71c1fc3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5966621866309598838
+      213: 21300000
     second: Fall_0
   - first:
-      213: -2069157278089061004
+      213: 21300002
     second: Fall_1
   externalObjects: {}
   serializedVersion: 10
@@ -75,7 +75,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
@@ -87,7 +87,7 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -107,7 +107,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ebab77bad2fa473499c6bbd88848f708
-      internalID: -5966621866309598838
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -128,7 +128,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 518dac9c098b9034eb38d39472a82d1a
-      internalID: -2069157278089061004
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
