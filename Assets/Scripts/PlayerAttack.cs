@@ -16,9 +16,13 @@ public class PlayerAttack : MonoBehaviour
     public float attackRate = 2f;
     private float nextAttackTime = 0f;
 
+    public int playerHealth;              //Spillerens standard mængde liv
+    private int playerCurrentHealth;      //Spillerens nuværende liv
+
     void Start()
     {
         anim = GetComponent<Animator>();
+        playerCurrentHealth = playerHealth;              //Sætter spillerens liv til variablen playerHealths værdi
     }
     void Update()
     {

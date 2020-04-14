@@ -14,10 +14,30 @@ public class Enemy : MonoBehaviour
     private Animator anim;          //Modstanderens animator
     private Rigidbody2D rb;
 
+    public float minAttackRange = 2.5f; //mindste distance før at modstanderen vil angribe
+
     private bool isRunning = false; //Bruges til at animere modstanderen når han løber
+
+    private SpriteRenderer spriteRenderer;
+
+    //Retning variable
+    private Vector2 direction;
+    public Vector2 Direction
+    {
+        get
+        {
+            return direction;
+        }
+
+        set
+        {
+            direction = value;
+        }
+    }
 
     void Start()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();     //Henter modstanderens animator, så komponentet kan ændres
         currentHealth = health;              //Sætter modstanderens liv til variablen healths værdi
         rb = GetComponent<Rigidbody2D>();    //Henter modstanderens Rigidbody, så komponentet kan ændres
@@ -27,14 +47,29 @@ public class Enemy : MonoBehaviour
     {
         if (hasTarget)
         {
-           
+            //Finder spillerens position
+            Direction = (target.transform.position - transform.position).normalized;
+
             float distance = Vector2.Distance(transform.position, target.transform.position); //Finder distancen mellem modstanderen og spilleren
             
-            if (distance > 2)               //Hvis modstanderen er mere end 2 units væk fra spilleren
+            if (distance > 2f)                          //Hvis modstanderen er mere end 2 units væk fra spilleren
             {
-                follow(target.transform);   //Følg efter spilleren
-            }
+                follow(target.transform);               //Følg efter spilleren
 
+                if (Direction.x > 0)                    //Checker om spilleren bevæger sig mod højre 
+                {
+                    spriteRenderer.flipX = true;        //Vender spilleren
+                }
+                if (Direction.x < 0)                    //Checker om spilleren bevæger sig mod venstre
+                {
+                    spriteRenderer.flipX = false;       //Vender spilleren
+                }
+                if (distance < minAttackRange)
+                {
+                    rb.velocity = new Vector2(0, 0);   //Stopper modstanderens bevægelser
+                    anim.SetTrigger("attack");
+                }
+            }
 
         }
     }
