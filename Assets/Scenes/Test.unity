@@ -121,6 +121,24 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &353881671 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8915772541363479343, guid: d6c1df432eda70b418aa3551deaa01b6,
+    type: 3}
+  m_PrefabInstance: {fileID: 5327184610303629743}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &353881672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353881671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2bf2d315aeb5b3468bb8aa039a6f114, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &452968318
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,10 +299,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2600c13f8a80f6e42a584cacd67d3f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  health: 100
   speed: 70
+  damage: 0
   minAttackRange: 2.08
+  attackRate: 0
+  health: 100
 --- !u!212 &1123470878
 SpriteRenderer:
   m_ObjectHideFlags: 0
