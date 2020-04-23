@@ -31,6 +31,8 @@ public class Background : MonoBehaviour
         Vector3 deltaMovement = cameraTrans.position - lastCamPos;
         transform.position += new Vector3(deltaMovement.x * parallaxEffectMultiplier.x, deltaMovement.y * parallaxEffectMultiplier.y);
         lastCamPos = cameraTrans.position;
+
+        /*
         if (infinytiX) { 
             if (Mathf.Abs(cameraTrans.position.x - transform.position.x) >= textureSizeX)
             {
@@ -46,5 +48,6 @@ public class Background : MonoBehaviour
                 transform.position = new Vector3(cameraTrans.position.x, transform.position.y + offsetPositionY);
             }
         }
+        */
     }
 }
