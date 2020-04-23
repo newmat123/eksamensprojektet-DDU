@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
             anim.SetBool("isGrounded", true);                    //Gør så det ligner at spilleren kun kan løbe når man er på jorden
             extraJumps = extraJumpsValue;                        //Nulstiller antallet af hop
         }
-        if (Input.GetKeyDown(KeyCode.Space) && extraJumps > 0)   //Hvis spilleren trykker på "W" og har flere hop
+        if (Input.GetKeyDown(KeyCode.Space) && extraJumps > 0 || Input.GetKeyDown(KeyCode.W) && extraJumps > 0)   //Hvis spilleren trykker på "W" og har flere hop
         {
             anim.SetTrigger("jump");                             //Bruges til at animere spilleren
             anim.SetBool("isGrounded", false);                   //Gør så det ikke ligner at spilleren løber når man hopper

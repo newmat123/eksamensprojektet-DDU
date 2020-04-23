@@ -852,6 +852,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.7
       objectReference: {fileID: 0}
+    - target: {fileID: 8915772541363479317, guid: d6c1df432eda70b418aa3551deaa01b6,
+        type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8915772541363479343, guid: d6c1df432eda70b418aa3551deaa01b6,
         type: 3}
       propertyPath: m_Name
