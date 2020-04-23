@@ -17,11 +17,11 @@ public class PlayerAttack : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-        void Update()
+    void Update()
     {
         if (Time.time >= nextAttackTime)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 Attack();
                 nextAttackTime = Time.time + 1f / attackRate;
