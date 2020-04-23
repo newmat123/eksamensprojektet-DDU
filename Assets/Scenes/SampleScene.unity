@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff53103c6b06dcd4aa5a7149677a80a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parallaxEffectMultiplier: {x: 0, y: 0}
+  parallaxEffectMultiplier: {x: 1, y: 1}
   infinytiX: 1
   infinitiY: 1
 --- !u!1 &246076030
