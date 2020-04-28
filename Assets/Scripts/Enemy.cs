@@ -4,143 +4,129 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed;             //Modstanderens hastighed
-    public int attackDamage;
-    private bool isRunning = false;
+    public float speed;                     //Modstanderens hastighed
 
-    private bool hasTarget = false; // checker om modstanderen har et target
-    private GameObject target;      // Modstanderens target
+    private bool hasTarget = false;         //Checker om modstanderen har et target
+    private GameObject target;              //Modstanderens target
 
-    public float minAttackRange = 2.5f; //mindste distance før at modstanderen vil angribe
-    private float attackTime = 3f;
-    public float nextAttackTime = 2f;
+    public int health = 100;                //Modstanderens standard mængde liv
+    private int currentHealth;              //Modstanderens nuværende liv
 
-    GameObject player;
-    PlayerMovement playerHealth;
+    public int attackDamage;                //Modstanderens skade
+    public float minAttackRange = 2.5f;     //Mindste distance før at modstanderen vil angribe
+    private float attackTime = 3f;          //Tid der skal gå før at modstanderen kan angribe
+    public float nextAttackTime = 2f;       //Timer der skal tælle op til attackTime, før at modstanderen kan angribe
 
-    private Animator anim;        //refference til animatoren
-    private Rigidbody2D rb;
+    private Animator anim;                  //Refference til modstanderens animator
+    private Rigidbody2D rb;                 //Refference til modstanderens rigidbody, så vi kan flytte på modstanderen
+    private SpriteRenderer spriteRenderer;  //refference til modstanderens spriterenderer, så vi kan vende modstanderen istedet for at have 2 sprites
 
-    public int health = 100;        //Modstanderens standard mængde liv
-    private int currentHealth;      //Modstanderens nuværende liv
-   
-    private SpriteRenderer spriteRenderer;
-    //Retning variable
-    private Vector2 direction;
-    public Vector2 Direction
+    GameObject player;                      //Spillerens gameobjekt, så spilleren kan blive skadet
+    PlayerMovement playerHealth;            //Refference til scriptet Playermovement så spilleren kan blive skadet
+
+    public Vector2 Direction;               //Checker hvilken retning modstanderen vender
+
+    
+    public void Start()                                         //Hvad der sker når vi starter scenen
     {
-        get
-        {
-            return direction;
-        }
-
-        set
-        {
-            direction = value;
-        }
+        player = GameObject.FindGameObjectWithTag("Player");    //Henter spilleren som et gameobjekt
+        playerHealth = player.GetComponent<PlayerMovement>();   //Henter spillerens script "PlayerMovement"
+        spriteRenderer = GetComponent<SpriteRenderer>();        //Henter modstanderens spriterenderer, så komponentet kan ændres
+        anim = GetComponent<Animator>();                        //Henter modstanderens animator, så komponentet kan ændres
+        currentHealth = health;                                 //Sætter modstanderens liv til variablen healths værdi
+        rb = GetComponent<Rigidbody2D>();                       //Henter modstanderens Rigidbody, så komponentet kan ændres
     }
-
-    public void Start()
+    
+    void Update()                                                                               //Hvad der sker hver frame
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerHealth = player.GetComponent<PlayerMovement>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        anim = GetComponent<Animator>();     //Henter modstanderens animator, så komponentet kan ændres
-        currentHealth = health;              //Sætter modstanderens liv til variablen healths værdi
-        rb = GetComponent<Rigidbody2D>();    //Henter modstanderens Rigidbody, så komponentet kan ændres
-    }
-    void Update()
-    {
-        if (hasTarget)
+        if (hasTarget)                                                                          //Hvis modstanderen har et mål            
         {
-            //Finder spillerens position
-            Direction = (target.transform.position - transform.position).normalized;
+            Direction = (target.transform.position - transform.position).normalized;            //Beregner hvilken retning at spilleren befinder sig i
 
-            float distance = Vector2.Distance(transform.position, target.transform.position); //Finder distancen mellem modstanderen og spilleren
+            float distance = Vector2.Distance(transform.position, target.transform.position);   //Finder distancen mellem modstanderen og spilleren
             
             if (distance > 2f)                          //Hvis modstanderen er mere end 2 units væk fra spilleren
             {
-                follow(target.transform);               //Følg efter spilleren
+                follow(target.transform);               //Kører follow() funktionen med spilleren som mål
 
-                if (Direction.x > 0)                    //Checker om spilleren bevæger sig mod højre 
+                if (Direction.x > 0)                    //Checker om spilleren er til højre for modstanderen 
                 {
-                    spriteRenderer.flipX = true;        //Vender spilleren
+                    spriteRenderer.flipX = true;        //Vender spilleren til højre
                 }
-                if (Direction.x < 0)                    //Checker om spilleren bevæger sig mod venstre
+                if (Direction.x < 0)                    //Checker om spilleren er til venstre for modstanderen 
                 {
-                    spriteRenderer.flipX = false;       //Vender spilleren
+                    spriteRenderer.flipX = false;       //Vender spilleren til venstre
                 }
             }     
-            if (distance < 2f)
+            if (distance < 2f)                          //Hvis spilleren er indenfor 2f af modstanderen
             {
-                attack();
+                attack();                               //Kører attack() funktionen
             }
         }
     }
     
    
-    private void OnTriggerEnter2D(Collider2D collision) //Hvis modstanderen rammer en collidere
+    private void OnTriggerEnter2D(Collider2D collision) //Sker når modstanderen rammer en collider
     {
-        if (collision.tag.Equals("Player"))     //Hvis modstanderens collider rammer spillerens
+        if (collision.tag.Equals("Player"))             //Hvis modstanderens collider rammer spillerens
         {                                       
-            target = collision.gameObject;      //Bliver det modstanderens mål
-            hasTarget = true;                   //Sætter boolen til true
-            anim.SetBool("isRunning", true);    //Gør så modstanderen kan animeres
+            target = collision.gameObject;              //Bliver spilleren til modstanderens mål
+            hasTarget = true;                           //Sætter boolen til true, så modstanderen kan følge efter spilleren
+            anim.SetBool("isRunning", true);            //Gør så modstanderen kan animeres til at løbe
         }
     }
-    private void OnTriggerExit2D(Collider2D collision) //Hvis modstanderen ikke collider med noget længere
+    private void OnTriggerExit2D(Collider2D collision)  //Sker når modstanderen ikke collider med noget længere
     {
         if (collision.tag.Equals("Player"))             //Hvis modstanderens collider ikke rammer spillerens længere
         {
             target = null;                              //Gør så modstanderen ikke har noget target længere
-            hasTarget = false;                          //Sætter boolen til false
+            hasTarget = false;                          //Sætter boolen til true, så modstanderen ikke længere kan følge efter spilleren
             rb.velocity = new Vector2(0,0);             //Stopper modstanderens bevægelser
-            anim.SetBool("isRunning", false);
+            anim.SetBool("isRunning", false);           //Gør så modstanderen ikke er animeret til at løbe længere
         }
     }
 
-    private void attack()
+    private void attack()                               //Sker når modstanderen er indenfor 2f af spilleren
     {
-        if (attackTime >= nextAttackTime) //if the set amount of time has passed
+        if (attackTime >= nextAttackTime)               //hvis variablen attackTime er større end variablen nextAttackTime
         {
-            if (playerHealth.currentHealth > 0)
+            if (playerHealth.currentHealth > 0)         //Hvis spilleren stadig er i live
             {
-                anim.SetTrigger("attack");
-                playerHealth.TakeDamage(attackDamage); //make player take damage               
+                anim.SetTrigger("attack");              //Animer modstanderen til at angribe spilleren
+                playerHealth.TakeDamage(attackDamage);  //Skad spilleren med variablen attackDamage værdi              
             }
-            attackTime = 0;
+            attackTime = 0;                             //Gør variablen attackTime
         }
-        else
+        else                                            //Hvis variablen attackTime ikke er større end variablen nextAttackTime
         {
-            attackTime += Time.deltaTime; //add time
+            attackTime += Time.deltaTime;               //Tilføj tid til variablen attackTime
         }
     }
 
 
-    private void follow(Transform target)
+    private void follow(Transform target)                                                                           //Sker når modstanderen har et mål
     {
-        // add force to my rigid body to make me move
-        rb.velocity = new Vector2((target.transform.position.x - transform.position.x)*speed*Time.deltaTime,0f);
+        rb.velocity = new Vector2((target.transform.position.x - transform.position.x)*speed*Time.deltaTime,0f);    // Gør så modstanderen følger efter spilleren
     }
-    public void TakeDamage(int damage)
-    {
-        anim.SetTrigger("Hurt");    //Spiller skade animationen
-        Debug.Log(damage);
-        currentHealth -= damage;    //Gør så modstanderen tager skade
 
-        if (currentHealth <= 0)
+    public void TakeDamage(int damage)  //Sker når modstanderen bliver angrebet
+    {
+        anim.SetTrigger("Hurt");        //Spiller skade animationen
+        Debug.Log(damage);              //Viser hvor meget skade at modstanderen tog i konsolen
+        currentHealth -= damage;        //Gør så modstanderen tager skade
+
+        if (currentHealth <= 0)         //Hvis modstanderens liv er lig eller under 0
         {
-            StartCoroutine(die());
+            StartCoroutine(die());      //Kør die() funktionen
         }
     }
 
-    IEnumerator die()
+    IEnumerator die()                                  //Sker når modstanderens liv er lig eller under 0
     {
-        rb.velocity = new Vector2(0, 0);
-        //Spiller døds animationen
-        anim.SetBool("IsDead", true);
-        yield return new WaitForSeconds(2);
-        Destroy(gameObject);
+        rb.velocity = new Vector2(0, 0);               //Få modstanderen til at stå stille        
+        anim.SetBool("IsDead", true);                  //Spiller døds animationen  
+        yield return new WaitForSeconds(2);            //Vent 2 sekunder
+        Destroy(gameObject);                           //Fjern modstanderen fra spillet
         
 
     }

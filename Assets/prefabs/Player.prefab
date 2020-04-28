@@ -154,7 +154,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2.5
   m_Material: {fileID: 6200000, guid: 703a9d0a9e06fcd4eb848539783e2c70, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -198,11 +198,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddad90636fb04b34d9026d99cac8fd78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  jumpForce: 11
+  speed: 10
+  jumpForce: 17.5
   damage: 20
   health: 100
-  currentHealth: 0
+  currentHealth: 100
   groundCheck: {fileID: 3627326032151947126}
   checkRadius: 1
   whatIsGround:
