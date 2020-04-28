@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
 
     public int health = 100;        //Modstanderens standard mængde liv
-    private int currentHealth;      //Modstanderens nuværende liv
+    public int currentHealth;      //Modstanderens nuværende liv
 
     private SpriteRenderer spriteRenderer;
 

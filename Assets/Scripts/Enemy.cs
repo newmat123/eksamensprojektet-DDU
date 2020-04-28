@@ -5,16 +5,18 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float speed;             //Modstanderens hastighed
-    public int damage;
+    public int attackDamage;
     private bool isRunning = false;
 
     private bool hasTarget = false; // checker om modstanderen har et target
     private GameObject target;      // Modstanderens target
 
     public float minAttackRange = 2.5f; //mindste distance før at modstanderen vil angribe
-    public float attackRate = 2f;
-    private float nextAttackTime = 0f;
+    private float attackTime = 3f;
+    public float nextAttackTime = 2f;
 
+    GameObject player;
+    PlayerMovement playerHealth;
 
     private Animator anim;        //refference til animatoren
     private Rigidbody2D rb;
@@ -37,9 +39,11 @@ public class Enemy : MonoBehaviour
             direction = value;
         }
     }
-    
-    protected virtual void Start()
+
+    public void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerHealth = player.GetComponent<PlayerMovement>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();     //Henter modstanderens animator, så komponentet kan ændres
         currentHealth = health;              //Sætter modstanderens liv til variablen healths værdi
@@ -47,7 +51,6 @@ public class Enemy : MonoBehaviour
     }
     void Update()
     {
-
         if (hasTarget)
         {
             //Finder spillerens position
@@ -67,9 +70,11 @@ public class Enemy : MonoBehaviour
                 {
                     spriteRenderer.flipX = false;       //Vender spilleren
                 }
-                
+            }     
+            if (distance < 2f)
+            {
+                attack();
             }
-
         }
     }
     
@@ -94,6 +99,24 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void attack()
+    {
+        if (attackTime >= nextAttackTime) //if the set amount of time has passed
+        {
+            if (playerHealth.currentHealth > 0)
+            {
+                anim.SetTrigger("attack");
+                playerHealth.TakeDamage(attackDamage); //make player take damage               
+            }
+            attackTime = 0;
+        }
+        else
+        {
+            attackTime += Time.deltaTime; //add time
+        }
+    }
+
+
     private void follow(Transform target)
     {
         // add force to my rigid body to make me move
@@ -101,9 +124,9 @@ public class Enemy : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
+        anim.SetTrigger("Hurt");    //Spiller skade animationen
         Debug.Log(damage);
         currentHealth -= damage;    //Gør så modstanderen tager skade
-        anim.SetTrigger("Hurt");    //Spiller skade animationen
 
         if (currentHealth <= 0)
         {
@@ -113,6 +136,7 @@ public class Enemy : MonoBehaviour
 
     IEnumerator die()
     {
+        rb.velocity = new Vector2(0, 0);
         //Spiller døds animationen
         anim.SetBool("IsDead", true);
         yield return new WaitForSeconds(2);
