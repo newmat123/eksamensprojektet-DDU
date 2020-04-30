@@ -1265,6 +1265,7 @@ MonoBehaviour:
   Tiles:
   - {fileID: 1097382014961502751, guid: b5f2035ccf8d48d4d9b11ea8b90202b8, type: 3}
   - {fileID: 4632762107455447292, guid: af699a5ac3940154fa0dc13378a4710e, type: 3}
+  - {fileID: 5600819687085975728, guid: 05d70ab04b3f51741a8473234c3744f3, type: 3}
 --- !u!1 &3457680369177808794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1777,6 +1778,8 @@ Transform:
   - {fileID: 7189844334797947038}
   - {fileID: 853541512223614529}
   - {fileID: 5304454964564037241}
+  - {fileID: 6928467756967085535}
+  - {fileID: 653712401109606399}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2000,6 +2003,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tiles:
   - {fileID: 1097382014961502751, guid: b5f2035ccf8d48d4d9b11ea8b90202b8, type: 3}
+--- !u!1 &4534593025079787032
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 653712401109606399}
+  - component: {fileID: 6027343229654966313}
+  m_Layer: 0
+  m_Name: tile (53)
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &653712401109606399
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4534593025079787032}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.97, y: -2.84, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3637228279620214533}
+  m_RootOrder: 79
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6027343229654966313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4534593025079787032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c3f5dd3dc9b354d8477b24f6bdbbf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tiles:
+  - {fileID: 5600819687085975728, guid: 05d70ab04b3f51741a8473234c3744f3, type: 3}
+  - {fileID: 4632762107455447292, guid: af699a5ac3940154fa0dc13378a4710e, type: 3}
 --- !u!1 &4641846944089220069
 GameObject:
   m_ObjectHideFlags: 0
@@ -3035,6 +3084,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Tiles:
   - {fileID: 1097382014961502751, guid: b5f2035ccf8d48d4d9b11ea8b90202b8, type: 3}
+--- !u!1 &7117376097242716652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6928467756967085535}
+  - component: {fileID: 3329080731123573786}
+  m_Layer: 0
+  m_Name: tile (52)
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6928467756967085535
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7117376097242716652}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.5, y: -3.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3637228279620214533}
+  m_RootOrder: 78
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3329080731123573786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7117376097242716652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c3f5dd3dc9b354d8477b24f6bdbbf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tiles:
+  - {fileID: 5600819687085975728, guid: 05d70ab04b3f51741a8473234c3744f3, type: 3}
+  - {fileID: 4632762107455447292, guid: af699a5ac3940154fa0dc13378a4710e, type: 3}
 --- !u!1 &7171300273690298487
 GameObject:
   m_ObjectHideFlags: 0

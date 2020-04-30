@@ -6,8 +6,8 @@ public class Background : MonoBehaviour
 {
 
     [SerializeField] private Vector2 parallaxEffectMultiplier;
-    [SerializeField] private bool infinytiX;
-    [SerializeField] private bool infinitiY;
+    //[SerializeField] private bool infinytiX;
+    //[SerializeField] private bool infinitiY;
 
     private Transform cameraTrans;
     private Vector3 lastCamPos;
