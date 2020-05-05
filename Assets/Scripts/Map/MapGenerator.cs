@@ -43,6 +43,8 @@ public class MapGenerator : MonoBehaviour
 
     private void placeRoom(bool venstre)
     {
+        upCounter = 0;
+
         //beregner hvor langt der skal rykkes for at rumne ikke overlapper eller laver mellemrum
         int rand = Random.Range(0, 4);
         int moveDis = oldRoomDis + rooms[rand].GetComponent<RoomType>().roomDis;
@@ -66,9 +68,6 @@ public class MapGenerator : MonoBehaviour
 
         //ændre oldroomdis til det nuværende rums roomDis var.
         oldRoomDis = rooms[rand].GetComponent<RoomType>().roomDis;
-
-        //finder ny retning -venstre 
-        direction = Random.Range(1, 6);
     }
 
 
@@ -80,12 +79,12 @@ public class MapGenerator : MonoBehaviour
             if(transform.position.x < maxX)
             {//tjekker om den kan rykke sig den givne retning uden at overskride.
 
-                //reseter upcountet 
-                upCounter = 0;
-
                 placeRoom(false);
-
-                if(direction == 3)
+                
+                //finder ny retning -venstre 
+                direction = Random.Range(1, 6);
+                
+                if (direction == 3)
                 {
                     direction = 2;
                 }
@@ -104,9 +103,9 @@ public class MapGenerator : MonoBehaviour
         {//move left
             if (transform.position.x > minX)
             {
-                upCounter = 0;
-
                 placeRoom(true);
+
+                direction = Random.Range(3, 6);
             }
             else
             {
