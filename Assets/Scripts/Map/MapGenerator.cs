@@ -25,8 +25,10 @@ public class MapGenerator : MonoBehaviour
 
     private int upCounter;
 
+
     private void Start()
     {
+        //finder det sted der skal startes fra, laver det første rum og rykker spilleren dertil.
         int randSTPos = Random.Range(0, startPoses.Length);
         transform.position = startPoses[randSTPos].position;
         Instantiate(rooms[0], transform.position, Quaternion.identity);
@@ -46,20 +48,25 @@ public class MapGenerator : MonoBehaviour
         if(direction == 1 || direction == 2)
         {// Move right
             if(transform.position.x < maxX)
-            {
+            {//tjekker om den kan rykke sig den givne retning uden at overskride.
+
+                //reseter upcountet 
                 upCounter = 0;
 
+                //beregner hvor langt der skal rykkes for at rumne ikke overlapper eller laver mellemrum
                 int rand = Random.Range(0, 4);
                 int moveDis = oldRoomDis + rooms[rand].GetComponent<RoomType>().roomDis;
 
+                //rykker dertil og placere rum
                 Vector2 newPos = new Vector2(transform.position.x + moveDis, transform.position.y);
                 transform.position = newPos;
 
-                oldRoomDis = rooms[rand].GetComponent<RoomType>().roomDis;
-
                 Instantiate(rooms[rand], transform.position, Quaternion.identity);
 
+                //ændre oldroomdis til det nuværende rums roomDis var.
+                oldRoomDis = rooms[rand].GetComponent<RoomType>().roomDis;
 
+                //finder ny retning -venstre 
                 direction = Random.Range(1, 6);
                 if(direction == 3)
                 {
@@ -72,6 +79,7 @@ public class MapGenerator : MonoBehaviour
             }
             else
             {
+                //kan den ikke gå længere til højre, gå op.
                 direction = 5;
             }
         }
@@ -87,9 +95,9 @@ public class MapGenerator : MonoBehaviour
                 Vector2 newPos = new Vector2(transform.position.x - moveDis, transform.position.y);
                 transform.position = newPos;
 
-                oldRoomDis = rooms[rand].GetComponent<RoomType>().roomDis;
-
                 Instantiate(rooms[rand], transform.position, Quaternion.identity);
+
+                oldRoomDis = rooms[rand].GetComponent<RoomType>().roomDis;
 
                 direction = Random.Range(3, 6);
             }
@@ -101,20 +109,22 @@ public class MapGenerator : MonoBehaviour
         }
         else if (direction == 5)
         {//move up
+            //læg en til upcount
             upCounter++;
 
+
             if(transform.position.y < maxY)
-            {
+            {//hvis vi kan fortsætte op
                 
                 Collider2D roomDetection = Physics2D.OverlapCircle(transform.position, 1, room);
                 roomDetection.GetComponent<RoomType>().DestroyObj();
 
                 if (upCounter >= 2)
-                {
+                {//er der blevet gået op flere gange i træk, erstatter vi det forige rum med et der har åbninger i alle retninger  
                     Instantiate(rooms[3], transform.position, Quaternion.identity);
                 }
                 else
-                {
+                {//ellers erstater vi rummet med et andet der har hul i toppen, højre og til venstre.
                     int randTopRoom = Random.Range(1, 4);
                     if(randTopRoom == 2)
                     {
@@ -123,23 +133,28 @@ public class MapGenerator : MonoBehaviour
                     Instantiate(rooms[randTopRoom], transform.position, Quaternion.identity);
                 }
                 
-
+                //ryker op og sætter et rum med hul i bunden.
                 Vector2 newPos = new Vector2(transform.position.x, transform.position.y + moveAmount);
                 transform.position = newPos;
 
                 int rand = Random.Range(2, 4);
                 Instantiate(rooms[rand], transform.position, Quaternion.identity);
 
+                oldRoomDis = rooms[rand].GetComponent<RoomType>().roomDis;
+
+                //finder ny retning
                 direction = Random.Range(1, 6);
                 
             }
             else
             {
+                //kan vi ikke gå længere op så stopper vi, ryk mapgeneratoren til start og fyld ud.
                 generationStop = true;
                 transform.position = startPoint;
                 fillUp();
             }
         }
+        //tjekker om vi er færdige med at generere hoved ruten.
         if (!generationStop)
         {
             Move();
@@ -148,29 +163,28 @@ public class MapGenerator : MonoBehaviour
 
     public void fillUp()
     {
-
+        //tjekker om der er et rum i forvejen.
         Collider2D roomDetection = Physics2D.OverlapCircle(transform.position, 1, room);
         if(roomDetection == null)
-        {
+        {//er der ikke sætter vi et tilfældigt rum.
             int rand = Random.Range(0, rooms.Length);
             Instantiate(rooms[rand], transform.position, Quaternion.identity);
         }
 
         if(transform.position.x < maxX)
-        {
+        {//kan vi fortsætte mod højre, gør vi det.
             Vector2 newPos = new Vector2(transform.position.x + (moveAmount * 3f), transform.position.y);
             transform.position = newPos;
         }
         else
-        {
+        {//ellers rykker vi helt til venstre og går x op.
             Vector2 newPos = new Vector2(startPoint.x, transform.position.y + moveAmount);
             transform.position = newPos;
         }
 
         if(transform.position.x <= maxX && transform.position.y <= maxY)
-        {
+        {//tjekker om vi er færdige, med at fylde ud.
             fillUp();
         }
-
     }
 }
