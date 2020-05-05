@@ -41,6 +41,36 @@ public class MapGenerator : MonoBehaviour
        Move();
     }
 
+    private void placeRoom(bool venstre)
+    {
+        //beregner hvor langt der skal rykkes for at rumne ikke overlapper eller laver mellemrum
+        int rand = Random.Range(0, 4);
+        int moveDis = oldRoomDis + rooms[rand].GetComponent<RoomType>().roomDis;
+
+        Vector2 newPos;
+
+        //finder ud af hvad vej vi skal rykkes i og rykker
+        if (venstre)
+        {
+            newPos = new Vector2(transform.position.x - moveDis, transform.position.y);
+        }
+        else
+        {
+            newPos = new Vector2(transform.position.x + moveDis, transform.position.y);
+        }
+
+        transform.position = newPos;
+
+        //placere et rum
+        Instantiate(rooms[rand], transform.position, Quaternion.identity);
+
+        //ændre oldroomdis til det nuværende rums roomDis var.
+        oldRoomDis = rooms[rand].GetComponent<RoomType>().roomDis;
+
+        //finder ny retning -venstre 
+        direction = Random.Range(1, 6);
+    }
+
 
     private void Move()
     {
@@ -53,21 +83,8 @@ public class MapGenerator : MonoBehaviour
                 //reseter upcountet 
                 upCounter = 0;
 
-                //beregner hvor langt der skal rykkes for at rumne ikke overlapper eller laver mellemrum
-                int rand = Random.Range(0, 4);
-                int moveDis = oldRoomDis + rooms[rand].GetComponent<RoomType>().roomDis;
+                placeRoom(false);
 
-                //rykker dertil og placere rum
-                Vector2 newPos = new Vector2(transform.position.x + moveDis, transform.position.y);
-                transform.position = newPos;
-
-                Instantiate(rooms[rand], transform.position, Quaternion.identity);
-
-                //ændre oldroomdis til det nuværende rums roomDis var.
-                oldRoomDis = rooms[rand].GetComponent<RoomType>().roomDis;
-
-                //finder ny retning -venstre 
-                direction = Random.Range(1, 6);
                 if(direction == 3)
                 {
                     direction = 2;
@@ -89,17 +106,7 @@ public class MapGenerator : MonoBehaviour
             {
                 upCounter = 0;
 
-                int rand = Random.Range(0, 4);
-                int moveDis = oldRoomDis + rooms[rand].GetComponent<RoomType>().roomDis;
-
-                Vector2 newPos = new Vector2(transform.position.x - moveDis, transform.position.y);
-                transform.position = newPos;
-
-                Instantiate(rooms[rand], transform.position, Quaternion.identity);
-
-                oldRoomDis = rooms[rand].GetComponent<RoomType>().roomDis;
-
-                direction = Random.Range(3, 6);
+                placeRoom(true);
             }
             else
             {
