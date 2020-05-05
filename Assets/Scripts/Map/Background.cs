@@ -15,8 +15,6 @@ public class Background : MonoBehaviour
     {
         cameraTrans = Camera.main.transform;
         lastCamPos = cameraTrans.position;
-        Sprite sprite = GetComponent<SpriteRenderer>().sprite;
-        Texture2D texture = sprite.texture;
     }
 
 
