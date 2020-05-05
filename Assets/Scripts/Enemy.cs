@@ -93,6 +93,7 @@ public class Enemy : MonoBehaviour
             if (playerHealth.currentHealth > 0)         //Hvis spilleren stadig er i live
             {
                 anim.SetTrigger("attack");              //Animer modstanderen til at angribe spilleren
+                anim.SetBool("isRunning", false);           //Gør så modstanderen ikke er animeret til at løbe længere
                 playerHealth.TakeDamage(attackDamage);  //Skad spilleren med variablen attackDamage værdi              
             }
             attackTime = 0;                             //Gør variablen attackTime
@@ -104,9 +105,10 @@ public class Enemy : MonoBehaviour
     }
 
 
-    private void follow(Transform target)                                                                           //Sker når modstanderen har et mål
+    private void follow(Transform target)                                                                           //Sker når modstanderen har et mål og spilleren er indenfor 2f af modstanderen
     {
         rb.velocity = new Vector2((target.transform.position.x - transform.position.x)*speed*Time.deltaTime,0f);    // Gør så modstanderen følger efter spilleren
+        anim.SetBool("isRunning", true);                                                                            //Gør så modstanderen ikke er animeret til at løbe længere
     }
 
     public void TakeDamage(int damage)  //Sker når modstanderen bliver angrebet
@@ -124,7 +126,7 @@ public class Enemy : MonoBehaviour
     IEnumerator die()                                  //Sker når modstanderens liv er lig eller under 0
     {
         rb.velocity = new Vector2(0, 0);               //Få modstanderen til at stå stille        
-        anim.SetBool("IsDead", true);                  //Spiller døds animationen  
+        anim.SetBool("isDead", true);                  //Spiller døds animationen  
         yield return new WaitForSeconds(2);            //Vent 2 sekunder
         Destroy(gameObject);                           //Fjern modstanderen fra spillet
         
