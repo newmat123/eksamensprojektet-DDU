@@ -24,6 +24,8 @@ public class PlayerMovement : MonoBehaviour
     private int extraJumps;                 //Spillerens nuværende antal hop
     public int extraJumpsValue;             //Spillerens standard antal hop
 
+    public HealthBar healthBar;
+
 
     void Start()                                            //Hvad der sker når vi starter scenen
     {
@@ -31,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();                    //Henter modstanderens animator, så komponentet kan ændres
         currentHealth = health;                             //Sætter modstanderens liv til variablen healths værdi
         rb = GetComponent<Rigidbody2D>();                   //Henter modstanderens Rigidbody, så komponentet kan ændres
+        healthBar.SetMaxHealth(health);
     }
     private void FixedUpdate()
     {
@@ -81,6 +84,7 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log(damage);              //Viser hvor meget skade at spilleren tog i konsolen
         currentHealth -= damage;        //trækker skaden fra spillerens nuværende liv
         //anim.SetTrigger("Hurt");        //Spiller skade animationen
+        healthBar.SetHealth(currentHealth);
 
         if (currentHealth <= 0)         //Hvis spillerens liv er lig eller under 0
         {

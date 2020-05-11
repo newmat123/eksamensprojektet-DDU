@@ -26,7 +26,9 @@ public class Enemy : MonoBehaviour
 
     public Vector2 Direction;               //Checker hvilken retning modstanderen vender
 
-    
+    public HealthBar healthBar;
+
+
     public void Start()                                         //Hvad der sker når vi starter scenen
     {
         player = GameObject.FindGameObjectWithTag("Player");    //Henter spilleren som et gameobjekt
@@ -35,6 +37,7 @@ public class Enemy : MonoBehaviour
         anim = GetComponent<Animator>();                        //Henter modstanderens animator, så komponentet kan ændres
         currentHealth = health;                                 //Sætter modstanderens liv til variablen healths værdi
         rb = GetComponent<Rigidbody2D>();                       //Henter modstanderens Rigidbody, så komponentet kan ændres
+        healthBar.SetMaxHealth(health);
     }
     
     void Update()                                                                               //Hvad der sker hver frame
@@ -89,6 +92,11 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void PlayerTakeDamage()
+    {
+        playerHealth.TakeDamage(attackDamage);  //Skad spilleren med variablen attackDamage værdi  
+    }
+
     private void attack()                               //Sker når modstanderen er indenfor 2f af spilleren
     {
         if (attackTime >= nextAttackTime)               //hvis variablen attackTime er større end variablen nextAttackTime
@@ -96,7 +104,6 @@ public class Enemy : MonoBehaviour
             if (playerHealth.currentHealth > 0)         //Hvis spilleren stadig er i live
             {
                 anim.SetTrigger("attack");              //Animer modstanderen til at angribe spilleren
-                playerHealth.TakeDamage(attackDamage);  //Skad spilleren med variablen attackDamage værdi   
                 attackTime = 0;                             //Gør variablen attackTime lig med 0
             }
         }
@@ -117,6 +124,7 @@ public class Enemy : MonoBehaviour
         anim.SetTrigger("Hurt");        //Spiller skade animationen
         Debug.Log(damage);              //Viser hvor meget skade at modstanderen tog i konsolen
         currentHealth -= damage;        //Gør så modstanderen tager skade
+        healthBar.SetHealth(currentHealth);
 
         if (currentHealth <= 0)         //Hvis modstanderens liv er lig eller under 0
         {
