@@ -484,6 +484,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6282429502545271768, guid: 1b82b18fed56186408d5f74657e3be5b,
+        type: 3}
+      propertyPath: m_Name
+      value: Player Health Bar
+      objectReference: {fileID: 0}
     - target: {fileID: 6282429502545271771, guid: 1b82b18fed56186408d5f74657e3be5b,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -502,6 +507,30 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 568890171}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &848481307 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6282429502545271717, guid: 1b82b18fed56186408d5f74657e3be5b,
+    type: 3}
+  m_PrefabInstance: {fileID: 568890171}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db29b212397cfed4da6c2855d73fdc27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1068015534 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2996073999008142110, guid: 05d70ab04b3f51741a8473234c3744f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 5600819688116381355}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db29b212397cfed4da6c2855d73fdc27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2950645129735513818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -514,6 +543,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3627326031521522616, guid: cfb0e0b2f7e8aab448d28fb5a7d14373,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 848481307}
     - target: {fileID: 3627326031521522617, guid: cfb0e0b2f7e8aab448d28fb5a7d14373,
         type: 3}
       propertyPath: m_GravityScale
@@ -715,5 +749,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5600819687085975734, guid: 05d70ab04b3f51741a8473234c3744f3,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1068015534}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05d70ab04b3f51741a8473234c3744f3, type: 3}
