@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -98,6 +99,7 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("isDead", true);                  //Spiller døds animationen  
         yield return new WaitForSeconds(2);            //Vent 2 sekunder
         Destroy(gameObject);                           //Fjern spilleren fra spillet
+        SceneManager.LoadScene("DeathScene");
 
 
     }

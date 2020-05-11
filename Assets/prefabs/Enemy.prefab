@@ -152,7 +152,7 @@ MonoBehaviour:
   minAttackRange: 2.08
   nextAttackTime: 3
   Direction: {x: 0, y: 0}
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 2996073999008142110}
 --- !u!95 &5600819687085975735
 Animator:
   serializedVersion: 3
@@ -364,3 +364,15 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 5600819688072259097}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2996073999008142110 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7218754228542878983, guid: 8a0da44f5e6b03c4894748328c8be1c9,
+    type: 3}
+  m_PrefabInstance: {fileID: 5600819688072259097}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db29b212397cfed4da6c2855d73fdc27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
