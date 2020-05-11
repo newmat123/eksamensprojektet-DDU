@@ -49,8 +49,6 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetBool("isRunning",false);                            //Skal spilleren ikke animeres til at løbe
         }
-
-
         
         if ( moveInput > 0)                 //Checker om spilleren bevæger sig mod højre 
         {
@@ -82,6 +80,22 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log(damage);              //Viser hvor meget skade at spilleren tog i konsolen
         currentHealth -= damage;        //trækker skaden fra spillerens nuværende liv
-        anim.SetTrigger("Hurt");        //Spiller skade animationen
+        //anim.SetTrigger("Hurt");        //Spiller skade animationen
+
+        if (currentHealth <= 0)         //Hvis spillerens liv er lig eller under 0
+        {
+            StartCoroutine(die());      //Kør die() funktionen
+        }
     }
+
+    IEnumerator die()                                  //Sker når modstanderens liv er lig eller under 0
+    {
+        rb.velocity = new Vector2(0, 0);               //Få spilleren til at stå stille        
+        anim.SetBool("isDead", true);                  //Spiller døds animationen  
+        yield return new WaitForSeconds(2);            //Vent 2 sekunder
+        Destroy(gameObject);                           //Fjern spilleren fra spillet
+
+
+    }
+
 }
