@@ -57,10 +57,14 @@ public class Enemy : MonoBehaviour
                 {
                     spriteRenderer.flipX = false;       //Vender spilleren til venstre
                 }
+
+                anim.SetBool("isRunning", true);        //Gør så modstanderen kan animeres til at løbe
+
             }     
             if (distance < 2f)                          //Hvis spilleren er indenfor 2f af modstanderen
             {
                 attack();                               //Kører attack() funktionen
+                anim.SetBool("isRunning", false);       //Gør så modstanderen ikke er animeret til at løbe længere
             }
         }
     }
@@ -72,7 +76,6 @@ public class Enemy : MonoBehaviour
         {                                       
             target = collision.gameObject;              //Bliver spilleren til modstanderens mål
             hasTarget = true;                           //Sætter boolen til true, så modstanderen kan følge efter spilleren
-            anim.SetBool("isRunning", true);            //Gør så modstanderen kan animeres til at løbe
         }
     }
     private void OnTriggerExit2D(Collider2D collision)  //Sker når modstanderen ikke collider med noget længere
@@ -93,9 +96,9 @@ public class Enemy : MonoBehaviour
             if (playerHealth.currentHealth > 0)         //Hvis spilleren stadig er i live
             {
                 anim.SetTrigger("attack");              //Animer modstanderen til at angribe spilleren
-                playerHealth.TakeDamage(attackDamage);  //Skad spilleren med variablen attackDamage værdi              
+                playerHealth.TakeDamage(attackDamage);  //Skad spilleren med variablen attackDamage værdi   
+                attackTime = 0;                             //Gør variablen attackTime lig med 0
             }
-            attackTime = 0;                             //Gør variablen attackTime
         }
         else                                            //Hvis variablen attackTime ikke er større end variablen nextAttackTime
         {
