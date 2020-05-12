@@ -38,13 +38,19 @@ public class EnemySpawner : MonoBehaviour
 
             transform.position = spawnPoint;
 
+            int rand = Random.Range(0, Enemys.Length);
+
+            Instantiate(Enemys[rand], transform.position, Quaternion.identity);
+            spawned++;
+
+            /*
             Collider2D objectDetction = Physics2D.OverlapCircle(transform.position, 1, obj);
             if (objectDetction = null)
             {
                 int rand = Random.Range(0, Enemys.Length);
                 Instantiate(Enemys[rand], transform.position, Quaternion.identity);
                 spawned++;
-            }
+            }*/
         }
         if (transform.position.y < endPoint.y)
         {

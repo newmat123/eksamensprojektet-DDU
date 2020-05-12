@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();                    //Henter modstanderens animator, så komponentet kan ændres
         currentHealth = health;                             //Sætter modstanderens liv til variablen healths værdi
         rb = GetComponent<Rigidbody2D>();                   //Henter modstanderens Rigidbody, så komponentet kan ændres
-        healthBar.SetMaxHealth(health);
+        //healthBar.SetMaxHealth(health);
     }
     private void FixedUpdate()
     {
