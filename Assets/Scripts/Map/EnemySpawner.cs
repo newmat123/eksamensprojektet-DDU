@@ -27,50 +27,34 @@ public class EnemySpawner : MonoBehaviour
         SpawnEnemys();
     }
 
+    void spawn(int xToSpawn, GameObject[] arr)
+    {
+        int spawned = 0;
+
+        while (spawned < xToSpawn)
+        {
+            float x = Random.Range(startPoint.x, endPoint.x);
+            Vector2 spawnPoint = new Vector2(x, transform.position.y);
+
+            transform.position = spawnPoint;
+
+            int rand = Random.Range(0, arr.Length);
+
+            Instantiate(arr[rand], transform.position, Quaternion.identity);
+            spawned++;
+        }
+        return;
+    }
 
     public void SpawnEnemys()
     {
         Vector2 up = new Vector2(transform.position.x, transform.position.y + upMove);
         transform.position = up;
 
-        int spawned = 0;
-        int iSpawned = 0;
+        spawn(enemysToSpawn, Enemys);
+        spawn(itemsToSpawn, Loot);
 
-        while (spawned < enemysToSpawn)
-        {
-            float x = Random.Range(startPoint.x, endPoint.x);
-            Vector2 spawnPoint = new Vector2(x, transform.position.y);
-
-            transform.position = spawnPoint;
-
-            int rand = Random.Range(0, Enemys.Length);
-
-            Instantiate(Enemys[rand], transform.position, Quaternion.identity);
-            spawned++;
-
-            
-            /*
-            Collider2D objectDetction = Physics2D.OverlapCircle(transform.position, 1, obj);
-            if (objectDetction = null)
-            {
-                int rand = Random.Range(0, Enemys.Length);
-                Instantiate(Enemys[rand], transform.position, Quaternion.identity);
-                spawned++;
-            }*/
-        }
-        while (iSpawned < itemsToSpawn)
-        {
-            float x = Random.Range(startPoint.x, endPoint.x);
-            Vector2 spawnPoint = new Vector2(x, transform.position.y);
-
-            transform.position = spawnPoint;
-
-            int rand = Random.Range(0, Loot.Length);
-
-            Instantiate(Loot[rand], transform.position, Quaternion.identity);
-            iSpawned++;
-
-        }
+  
         if (transform.position.y < endPoint.y)
         {
             SpawnEnemys();
