@@ -30,9 +30,6 @@ public class EnemySpawner : MonoBehaviour
     {
         Vector2 up = new Vector2(transform.position.x, transform.position.y + upMove);
         transform.position = up;
-        upCount++;
-
-        enemysToSpawn += upCount;
 
         int spawned = 0;
 
@@ -48,6 +45,7 @@ public class EnemySpawner : MonoBehaviour
             Instantiate(Enemys[rand], transform.position, Quaternion.identity);
             spawned++;
 
+            
             /*
             Collider2D objectDetction = Physics2D.OverlapCircle(transform.position, 1, obj);
             if (objectDetction = null)

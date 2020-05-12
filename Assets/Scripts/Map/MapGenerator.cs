@@ -12,6 +12,8 @@ public class MapGenerator : MonoBehaviour
     public Transform[] startPoses;
     public GameObject[] rooms;
 
+    public GameObject winObj;
+
     private int direction;
     private int oldRoomDis;
     public float moveAmount = 10;
@@ -155,6 +157,7 @@ public class MapGenerator : MonoBehaviour
             else
             {
                 //kan vi ikke gå længere op så stopper vi, ryk mapgeneratoren til start og fyld ud.
+                Instantiate(winObj, transform.position, Quaternion.identity);
                 generationStop = true;
                 transform.position = startPoint;
                 fillUp();
