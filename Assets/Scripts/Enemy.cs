@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
         anim = GetComponent<Animator>();                        //Henter modstanderens animator, så komponentet kan ændres
         currentHealth = health;                                 //Sætter modstanderens liv til variablen healths værdi
         rb = GetComponent<Rigidbody2D>();                       //Henter modstanderens Rigidbody, så komponentet kan ændres
-        healthBar.SetMaxHealth(health);
+        healthBar.SetMaxHealth(health);                         //Sætter spillerens liv i UI'en til at være lig med spillerens maks liv
     }
     
     void Update()                                                                               //Hvad der sker hver frame
@@ -104,7 +104,7 @@ public class Enemy : MonoBehaviour
             if (playerHealth.currentHealth > 0)         //Hvis spilleren stadig er i live
             {
                 anim.SetTrigger("attack");              //Animer modstanderen til at angribe spilleren
-                attackTime = 0;                             //Gør variablen attackTime lig med 0
+                attackTime = 0;                         //Gør variablen attackTime lig med 0
             }
         }
         else                                            //Hvis variablen attackTime ikke er større end variablen nextAttackTime
@@ -119,16 +119,16 @@ public class Enemy : MonoBehaviour
         rb.velocity = new Vector2((target.transform.position.x - transform.position.x)*speed*Time.deltaTime,0f);    // Gør så modstanderen følger efter spilleren
     }
 
-    public void TakeDamage(int damage)  //Sker når modstanderen bliver angrebet
+    public void TakeDamage(int damage)          //Sker når modstanderen bliver angrebet
     {
-        anim.SetTrigger("Hurt");        //Spiller skade animationen
-        Debug.Log(damage);              //Viser hvor meget skade at modstanderen tog i konsolen
-        currentHealth -= damage;        //Gør så modstanderen tager skade
-        healthBar.SetHealth(currentHealth);
+        anim.SetTrigger("Hurt");                //Spiller skade animationen
+        Debug.Log(damage);                      //Viser hvor meget skade at modstanderen tog i konsolen
+        currentHealth -= damage;                //Gør så modstanderen tager skade
+        healthBar.SetHealth(currentHealth);     //Ændrer UI'en
 
-        if (currentHealth <= 0)         //Hvis modstanderens liv er lig eller under 0
+        if (currentHealth <= 0)                 //Hvis modstanderens liv er lig eller under 0
         {
-            StartCoroutine(die());      //Kør die() funktionen
+            StartCoroutine(die());              //Kør die() funktionen
         }
     }
 
