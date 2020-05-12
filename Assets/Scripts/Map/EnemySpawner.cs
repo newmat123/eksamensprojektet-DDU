@@ -21,20 +21,17 @@ public class EnemySpawner : MonoBehaviour
     void Start()
     {
         startPoint = transform.position;
+        SpawnEnemys();
     }
 
 
     public void SpawnEnemys()
     {
-        if (transform.position.y < endPoint.y)
-        {
-            SpawnEnemys();
-        }
-
-        Vector2 up = new Vector2(transform.position.x, upMove);
+        Vector2 up = new Vector2(transform.position.x, transform.position.y + upMove);
         transform.position = up;
+        int spawned = 0;
 
-        for(int i = 0; i < enemysToSpawn; i++)
+        while (spawned < enemysToSpawn)
         {
             float x = Random.Range(startPoint.x, endPoint.x);
             Vector2 spawnPoint = new Vector2(x, transform.position.y);
@@ -45,10 +42,13 @@ public class EnemySpawner : MonoBehaviour
             if (objectDetction = null)
             {
                 int rand = Random.Range(0, Enemys.Length);
-                Instantiate(Enemys[rand]);
+                Instantiate(Enemys[rand], transform.position, Quaternion.identity);
+                spawned++;
             }
         }
-
+        if (transform.position.y < endPoint.y)
+        {
+            SpawnEnemys();
+        }
     }
-
 }
