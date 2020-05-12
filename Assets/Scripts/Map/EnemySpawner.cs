@@ -12,10 +12,11 @@ public class EnemySpawner : MonoBehaviour
 
     public float upMove = 10f;
 
-    public int enemysToSpawn = 3;
+    public int enemysToSpawn = 2;
 
     public LayerMask obj;
 
+    private int upCount = 0;
 
 
     void Start()
@@ -29,6 +30,10 @@ public class EnemySpawner : MonoBehaviour
     {
         Vector2 up = new Vector2(transform.position.x, transform.position.y + upMove);
         transform.position = up;
+        upCount++;
+
+        enemysToSpawn += upCount;
+
         int spawned = 0;
 
         while (spawned < enemysToSpawn)
