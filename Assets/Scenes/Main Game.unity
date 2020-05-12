@@ -582,6 +582,7 @@ MonoBehaviour:
   - {fileID: 5106364162015893194, guid: 54b0b203ffe91b846bec5f7b6ee704fc, type: 3}
   - {fileID: 5704794916730910060, guid: 7ae40ae231ddc3040bde7b267f85fc18, type: 3}
   - {fileID: 4547080190194438437, guid: cd12db7f8cb2c6544b802517665108ba, type: 3}
+  winObj: {fileID: 6703467958242068013, guid: 0ea837572d02e5f4eb73473265307657, type: 3}
   moveAmount: 10
   maxX: 75
   minX: -15
@@ -915,9 +916,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemys:
   - {fileID: 5600819687085975728, guid: 05d70ab04b3f51741a8473234c3744f3, type: 3}
+  Loot:
+  - {fileID: 6703467958242068013, guid: 0ea837572d02e5f4eb73473265307657, type: 3}
   endPoint: {x: 89, y: 195, z: 0}
   upMove: 10
   enemysToSpawn: 3
+  itemsToSpawn: 1
   obj:
     serializedVersion: 2
     m_Bits: 0

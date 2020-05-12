@@ -6,6 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
 
     public GameObject[] Enemys;
+    public GameObject[] Loot;
 
     private Vector3 startPoint;
     public Vector3 endPoint;
@@ -13,6 +14,7 @@ public class EnemySpawner : MonoBehaviour
     public float upMove = 10f;
 
     public int enemysToSpawn = 2;
+    public int itemsToSpawn = 1;
 
     public LayerMask obj;
 
@@ -32,6 +34,7 @@ public class EnemySpawner : MonoBehaviour
         transform.position = up;
 
         int spawned = 0;
+        int iSpawned = 0;
 
         while (spawned < enemysToSpawn)
         {
@@ -54,6 +57,19 @@ public class EnemySpawner : MonoBehaviour
                 Instantiate(Enemys[rand], transform.position, Quaternion.identity);
                 spawned++;
             }*/
+        }
+        while (iSpawned < itemsToSpawn)
+        {
+            float x = Random.Range(startPoint.x, endPoint.x);
+            Vector2 spawnPoint = new Vector2(x, transform.position.y);
+
+            transform.position = spawnPoint;
+
+            int rand = Random.Range(0, Loot.Length);
+
+            Instantiate(Loot[rand], transform.position, Quaternion.identity);
+            iSpawned++;
+
         }
         if (transform.position.y < endPoint.y)
         {
