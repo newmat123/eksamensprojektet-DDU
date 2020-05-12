@@ -134,7 +134,7 @@ public class Enemy : MonoBehaviour
 
     IEnumerator die()                                  //Sker når modstanderens liv er lig eller under 0
     {
-        rb.velocity = new Vector2(0, 0);               //Få modstanderen til at stå stille        
+        target = null; 
         anim.SetBool("IsDead", true);                  //Spiller døds animationen  
         yield return new WaitForSeconds(2);            //Vent 2 sekunder
         Destroy(gameObject);                           //Fjern modstanderen fra spillet

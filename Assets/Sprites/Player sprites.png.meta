@@ -1,109 +1,118 @@
 fileFormatVersion: 2
-guid: 200702de4be561c449164ae2612f1db8
+guid: ba78ec1472982bb4e94897d4e36bb8ee
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2755060221033944885
-    second: eksamen-karakter-idel_1_0
+      213: 4217856175737958080
+    second: Player sprites_0
   - first:
-      213: -2465807506702323217
-    second: eksamen-karakter-idel_1_1
+      213: 4007858624644970888
+    second: Player sprites_1
   - first:
-      213: -8344337386653740723
-    second: eksamen-karakter-idel_1_2
+      213: -1524852478211268816
+    second: Player sprites_2
   - first:
-      213: -227401024542228517
-    second: eksamen-karakter-idel_1_3
+      213: -1433407831068946719
+    second: Player sprites_3
   - first:
-      213: -3693842833902161194
-    second: eksamen-karakter-idel_1_4
+      213: 4417678681336872225
+    second: Player sprites_4
   - first:
-      213: -8921417353102108490
-    second: eksamen-karakter-idel_1_5
+      213: 1944267722888667657
+    second: Player sprites_5
   - first:
-      213: 9109908249542006862
-    second: eksamen-karakter-idel_1_6
+      213: -8951455204047114881
+    second: Player sprites_6
   - first:
-      213: -858241706766790853
-    second: eksamen-karakter-idel_1_7
+      213: -4053289510591314737
+    second: Player sprites_7
   - first:
-      213: 2272592505903033977
-    second: eksamen-karakter-idel_1_8
+      213: 5198748543061312155
+    second: Player sprites_8
   - first:
-      213: -8215497593940469893
-    second: eksamen-karakter-idel_1_9
+      213: 6442281784160266122
+    second: Player sprites_9
   - first:
-      213: 8010719858329413536
-    second: eksamen-karakter-idel_1_10
+      213: -3481053008759719146
+    second: Player sprites_10
   - first:
-      213: 8671705569128653639
-    second: eksamen-karakter-idel_1_11
+      213: 4414116783208403497
+    second: Player sprites_11
   - first:
-      213: 1210288408309277499
-    second: eksamen-karakter-idel_1_12
+      213: 5652636746838584108
+    second: Player sprites_12
   - first:
-      213: 393445106670157009
-    second: eksamen-karakter-idel_1_13
+      213: 7471081421908585856
+    second: Player sprites_13
   - first:
-      213: 2118087182052794352
-    second: eksamen-karakter-idel_1_14
+      213: 3430931859461384639
+    second: Player sprites_14
   - first:
-      213: -8584209147319644517
-    second: eksamen-karakter-idel_1_15
+      213: 605805798520527001
+    second: Player sprites_15
   - first:
-      213: 1236631879550644121
-    second: eksamen-karakter-idel_1_16
+      213: 2763564516175614753
+    second: Player sprites_16
   - first:
-      213: 2006795292272124539
-    second: eksamen-karakter-idel_1_17
+      213: -629006996104496240
+    second: Player sprites_17
   - first:
-      213: -9102174713788220427
-    second: eksamen-karakter-idel_1_18
+      213: -3254085054169559032
+    second: Player sprites_18
   - first:
-      213: -1410622350418340217
-    second: eksamen-karakter-idel_1_19
+      213: 1832644298681332560
+    second: Player sprites_19
   - first:
-      213: -6558505750170911001
-    second: eksamen-karakter-idel_1_20
+      213: 1209935077230143779
+    second: Player sprites_20
   - first:
-      213: 1357732560643925867
-    second: eksamen-karakter-idel_1_21
+      213: -482158938474472284
+    second: Player sprites_21
   - first:
-      213: -7950003880443501186
-    second: eksamen-karakter-idel_1_22
+      213: -8293652248906411101
+    second: Player sprites_22
   - first:
-      213: 2629083731598893493
-    second: eksamen-karakter-idel_1_23
+      213: 2852509575789722127
+    second: Player sprites_23
   - first:
-      213: 6773125485390918436
-    second: eksamen-karakter-idel_1_24
+      213: -6207594974545830239
+    second: Player sprites_24
   - first:
-      213: 4559759629886384685
-    second: eksamen-karakter-idel_1_25
+      213: -4109365194867726793
+    second: Player sprites_25
   - first:
-      213: 3974036359678307119
-    second: eksamen-karakter-idel_1_26
+      213: 5189323635256642993
+    second: Player sprites_26
   - first:
-      213: 2281635078836575224
-    second: eksamen-karakter-idel_1_27
+      213: 8730722676973975216
+    second: Player sprites_27
   - first:
-      213: 5945620559947918725
-    second: eksamen-karakter-idel_1_28
+      213: 6031945607496575397
+    second: Player sprites_28
   - first:
-      213: 4412419638340201118
-    second: eksamen-karakter-idel_1_29
+      213: 5500405517098426903
+    second: Player sprites_29
   - first:
-      213: 1981742003085079073
-    second: eksamen-karakter-idel_1_30
+      213: 5882694452248977202
+    second: Player sprites_30
   - first:
-      213: 7718080407671300823
-    second: eksamen-karakter-idel_1_31
+      213: 8010299018711271985
+    second: Player sprites_31
   - first:
-      213: -7157229045743369299
-    second: eksamen-karakter-idel_1_32
+      213: 4285184567365503724
+    second: Player sprites_32
   - first:
-      213: -6070475743709139350
-    second: eksamen-karakter-idel_1_33
+      213: 93256891192497128
+    second: Player sprites_33
+  - first:
+      213: -3948279616725006666
+    second: Player sprites_34
+  - first:
+      213: -3318274340853615434
+    second: Player sprites_35
+  - first:
+      213: 2410691082870057500
+    second: Player sprites_36
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -147,7 +156,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -188,7 +197,133 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_0
+      name: Player sprites_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77388b2c32386b54d9ce3b3f811c8ef0
+      internalID: 4217856175737958080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player sprites_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1963355891f3ea7448958296c52ef92b
+      internalID: 4007858624644970888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player sprites_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e369ab3bfa186c14e970abb6d0afab46
+      internalID: -1524852478211268816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player sprites_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: feef4dbe6f2648d42af426a957c9c6f1
+      internalID: -1433407831068946719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player sprites_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26d3415b99d3db746b57e3e040141150
+      internalID: 4417678681336872225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player sprites_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10baa441148b31a40bc622f05c65d7ad
+      internalID: 1944267722888667657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Player sprites_6
       rect:
         serializedVersion: 2
         x: 0
@@ -202,14 +337,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25a70d3977d64e24585e5e66a622f692
-      internalID: -2755060221033944885
+      spriteID: d8147fd4190cc6948a19007870be57fc
+      internalID: -8951455204047114881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_1
+      name: Player sprites_7
       rect:
         serializedVersion: 2
         x: 64
@@ -223,14 +358,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74853c47da0fb684180f488172f39703
-      internalID: -2465807506702323217
+      spriteID: 51050985dd4c10543a79532538382a89
+      internalID: -4053289510591314737
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_2
+      name: Player sprites_8
       rect:
         serializedVersion: 2
         x: 128
@@ -244,14 +379,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9badd14fd0ec2cc49a8c1e6567b2bfc1
-      internalID: -8344337386653740723
+      spriteID: 73d717ac57014fc45a9031d627fffc29
+      internalID: 5198748543061312155
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_3
+      name: Player sprites_9
       rect:
         serializedVersion: 2
         x: 192
@@ -265,14 +400,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b966c658035bc4b47afe0c7a2c29a306
-      internalID: -227401024542228517
+      spriteID: 61a206062fa96144e8e27b41f702f5f2
+      internalID: 6442281784160266122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_4
+      name: Player sprites_10
       rect:
         serializedVersion: 2
         x: 256
@@ -286,14 +421,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 21245edb6a6644442baedbe670c81977
-      internalID: -3693842833902161194
+      spriteID: ddcc06524f3208846b040837bdf2b6cb
+      internalID: -3481053008759719146
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_5
+      name: Player sprites_11
       rect:
         serializedVersion: 2
         x: 320
@@ -307,14 +442,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b52bbdeb1a072db488229dd20748195d
-      internalID: -8921417353102108490
+      spriteID: 39889b55de6ee2a4cabb7c28a02d35ab
+      internalID: 4414116783208403497
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_6
+      name: Player sprites_12
       rect:
         serializedVersion: 2
         x: 0
@@ -328,14 +463,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c1455d42313bbd847b7514341903a998
-      internalID: 9109908249542006862
+      spriteID: 958e0c2c2a4496f4aaaf02c06696e270
+      internalID: 5652636746838584108
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_7
+      name: Player sprites_13
       rect:
         serializedVersion: 2
         x: 64
@@ -349,14 +484,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d23a4218776b8745b435c51c40fb3f9
-      internalID: -858241706766790853
+      spriteID: 4e6dbdd9efb4c18499cf4725b58fd70e
+      internalID: 7471081421908585856
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_8
+      name: Player sprites_14
       rect:
         serializedVersion: 2
         x: 128
@@ -370,14 +505,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bb69855e05b744e4686f51f3719ac22a
-      internalID: 2272592505903033977
+      spriteID: f4487d7a100cc4543b191208bf7e147a
+      internalID: 3430931859461384639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_9
+      name: Player sprites_15
       rect:
         serializedVersion: 2
         x: 192
@@ -391,14 +526,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c14d3dbb082f15449f2c5531510ecff
-      internalID: -8215497593940469893
+      spriteID: 1221d8e2e86312b4fa4efd611cc451d7
+      internalID: 605805798520527001
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_10
+      name: Player sprites_16
       rect:
         serializedVersion: 2
         x: 256
@@ -412,14 +547,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 070f90c2060a93346bee351b163d6fd4
-      internalID: 8010719858329413536
+      spriteID: 05e1477620c8c8b4bbc24dcb0a8841b4
+      internalID: 2763564516175614753
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_11
+      name: Player sprites_17
       rect:
         serializedVersion: 2
         x: 320
@@ -433,14 +568,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 373253a27b34df548b5d478be4f28bd3
-      internalID: 8671705569128653639
+      spriteID: 648962ab93802c94c907160232a426cc
+      internalID: -629006996104496240
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_12
+      name: Player sprites_18
       rect:
         serializedVersion: 2
         x: 0
@@ -454,14 +589,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7dddac3b5d7ea48419b79a07b56b86c1
-      internalID: 1210288408309277499
+      spriteID: d15c66c09745cc843b661fcf69989e72
+      internalID: -3254085054169559032
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_13
+      name: Player sprites_19
       rect:
         serializedVersion: 2
         x: 64
@@ -475,14 +610,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 959181f914de4c64ab64219887815195
-      internalID: 393445106670157009
+      spriteID: cd7e228edb273e844a42380db0e0bc44
+      internalID: 1832644298681332560
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_14
+      name: Player sprites_20
       rect:
         serializedVersion: 2
         x: 128
@@ -496,14 +631,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73d9ad0d9140a9b44a4e47069d94a644
-      internalID: 2118087182052794352
+      spriteID: 4f57ae487430991428f557f18ba719c0
+      internalID: 1209935077230143779
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_15
+      name: Player sprites_21
       rect:
         serializedVersion: 2
         x: 192
@@ -517,14 +652,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cd2feb69ee6677f4c912ae3774788649
-      internalID: -8584209147319644517
+      spriteID: 41b93a84aae073540ae923b168b9400a
+      internalID: -482158938474472284
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_16
+      name: Player sprites_22
       rect:
         serializedVersion: 2
         x: 256
@@ -538,14 +673,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4acace22054d7a47b83477612a3b0fb
-      internalID: 1236631879550644121
+      spriteID: 651b6293d254c664fa3607d86472cc23
+      internalID: -8293652248906411101
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_17
+      name: Player sprites_23
       rect:
         serializedVersion: 2
         x: 320
@@ -559,14 +694,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9364a965c0ef51040804ff719b57dfbd
-      internalID: 2006795292272124539
+      spriteID: 215d0ab4a5f00ce4ea96ed01100e7759
+      internalID: 2852509575789722127
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_18
+      name: Player sprites_24
       rect:
         serializedVersion: 2
         x: 0
@@ -580,14 +715,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48879a4792312a04e9f18a80ecf9121a
-      internalID: -9102174713788220427
+      spriteID: 3dc70e430a543ae4f877faa59b64e027
+      internalID: -6207594974545830239
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_19
+      name: Player sprites_25
       rect:
         serializedVersion: 2
         x: 64
@@ -601,14 +736,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2a008d6dceffcb7458a10b834a9a6e59
-      internalID: -1410622350418340217
+      spriteID: db3bf896cbd0ed64f81595e0b1c0922a
+      internalID: -4109365194867726793
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_20
+      name: Player sprites_26
       rect:
         serializedVersion: 2
         x: 128
@@ -622,14 +757,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4809a103a6c617646a9f4b706b124110
-      internalID: -6558505750170911001
+      spriteID: cb546c3a8087ad94987fe53783b7a45e
+      internalID: 5189323635256642993
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_21
+      name: Player sprites_27
       rect:
         serializedVersion: 2
         x: 192
@@ -643,14 +778,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8b112529c0adf3438bdb7ad441ffa71
-      internalID: 1357732560643925867
+      spriteID: 3122ffc93a510364a90df44b75a2fef9
+      internalID: 8730722676973975216
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_22
+      name: Player sprites_28
       rect:
         serializedVersion: 2
         x: 256
@@ -664,14 +799,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 569abaca3b83e124f87f169e598671de
-      internalID: -7950003880443501186
+      spriteID: d6a36554f2bec70489aab7da1ca67a50
+      internalID: 6031945607496575397
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_23
+      name: Player sprites_29
       rect:
         serializedVersion: 2
         x: 320
@@ -685,14 +820,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ddb735afdb5ae3c40bdbf858ffb74e4c
-      internalID: 2629083731598893493
+      spriteID: c3a0e0689337e5742b559952a91b67df
+      internalID: 5500405517098426903
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_24
+      name: Player sprites_30
       rect:
         serializedVersion: 2
         x: 0
@@ -706,14 +841,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ca4c2ad9ce203640bd2e253432b26e4
-      internalID: 6773125485390918436
+      spriteID: 3b27f380e50c87149aa57403c326ff33
+      internalID: 5882694452248977202
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_25
+      name: Player sprites_31
       rect:
         serializedVersion: 2
         x: 64
@@ -727,14 +862,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eaa3f7d94f962bd4a8dcc5bc94d96b45
-      internalID: 4559759629886384685
+      spriteID: 040ccea6d4fdff84581244ab73aaf6ee
+      internalID: 8010299018711271985
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_26
+      name: Player sprites_32
       rect:
         serializedVersion: 2
         x: 128
@@ -748,14 +883,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 198d161bea10b2e4d9f04648df2f2696
-      internalID: 3974036359678307119
+      spriteID: dd6af7504bd5be04bad887cae8c16617
+      internalID: 4285184567365503724
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_27
+      name: Player sprites_33
       rect:
         serializedVersion: 2
         x: 192
@@ -769,14 +904,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 70e502b6da6912d459a0f13f6b1890bb
-      internalID: 2281635078836575224
+      spriteID: a3851868ca9b23c42adcc7ed92189c4a
+      internalID: 93256891192497128
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_28
+      name: Player sprites_34
       rect:
         serializedVersion: 2
         x: 256
@@ -790,14 +925,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db53d4f0c1ccedc48ad3e7455b11cad0
-      internalID: 5945620559947918725
+      spriteID: cc2ed6bfe889eda4389df815cc2a4ada
+      internalID: -3948279616725006666
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_29
+      name: Player sprites_35
       rect:
         serializedVersion: 2
         x: 320
@@ -811,14 +946,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ed2ea14d00dcb540bef09ebdc496e7b
-      internalID: 4412419638340201118
+      spriteID: fa9807d3208384648bd0802cc87c661d
+      internalID: -3318274340853615434
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: eksamen-karakter-idel_1_30
+      name: Player sprites_36
       rect:
         serializedVersion: 2
         x: 0
@@ -832,71 +967,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cc90572d6a8a4546bcf47934226bbac
-      internalID: 1981742003085079073
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: eksamen-karakter-idel_1_31
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 61fb6287f51c79a42a483c21b5bec4ec
-      internalID: 7718080407671300823
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: eksamen-karakter-idel_1_32
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c0c5f818ee7bc0d448335700ef6db299
-      internalID: -7157229045743369299
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: eksamen-karakter-idel_1_33
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c4605bfa1b2239648909520dcd62277f
-      internalID: -6070475743709139350
+      spriteID: 9b1c36d367bd3b24cba17dc863f8e2fc
+      internalID: 2410691082870057500
       vertices: []
       indices: 
       edges: []
