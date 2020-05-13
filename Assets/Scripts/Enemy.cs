@@ -54,11 +54,11 @@ public class Enemy : MonoBehaviour
 
                 if (Direction.x > 0)                    //Checker om spilleren er til højre for modstanderen 
                 {
-                    spriteRenderer.flipX = true;        //Vender spilleren til højre
+                    spriteRenderer.flipX = false;        //Vender spilleren til højre
                 }
                 if (Direction.x < 0)                    //Checker om spilleren er til venstre for modstanderen 
                 {
-                    spriteRenderer.flipX = false;       //Vender spilleren til venstre
+                    spriteRenderer.flipX = true;       //Vender spilleren til venstre
                 }
 
                 anim.SetBool("isRunning", true);        //Gør så modstanderen kan animeres til at løbe
