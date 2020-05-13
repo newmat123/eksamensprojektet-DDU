@@ -106,16 +106,17 @@ public class PlayerMovement : MonoBehaviour
     {
         if(collision.tag == "Health")
         {
-            
-            currentHealth += 60;        //trækker skaden fra spillerens nuværende liv
-            if (currentHealth > 100)
+            if(currentHealth < 100)
             {
-                currentHealth = 100;
-            }
-            healthBar.SetHealth(currentHealth);
+                currentHealth += 60;        //trækker skaden fra spillerens nuværende liv
+                if (currentHealth > 100)
+                {
+                    currentHealth = 100;
+                }
+                healthBar.SetHealth(currentHealth);
 
-            Destroy(collision.gameObject);
+                Destroy(collision.gameObject);
+            }
         }
     }
-
 }
