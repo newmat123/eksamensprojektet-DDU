@@ -119,7 +119,7 @@ public class PlayerMovement : MonoBehaviour
             }
         }else if(collision.tag == "WinObj")
         {
-            //win
+            SceneManager.LoadScene("winScene");
         }
     }
 }
