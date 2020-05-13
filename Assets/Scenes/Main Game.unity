@@ -916,6 +916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemys:
   - {fileID: 5600819687085975728, guid: 05d70ab04b3f51741a8473234c3744f3, type: 3}
+  - {fileID: 5600819687085975728, guid: ff68627e20da2984b83d3d9f0c3aa276, type: 3}
   Loot:
   - {fileID: 6703467958242068013, guid: 0ea837572d02e5f4eb73473265307657, type: 3}
   endPoint: {x: 89, y: 195, z: 0}
