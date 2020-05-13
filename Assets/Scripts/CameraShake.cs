@@ -20,7 +20,7 @@ public class CameraShake : MonoBehaviour
 
         if (activateShake == true)
         {
-            yield return new WaitForEndOfFrame();            //Vent 2 sekunder
+            yield return new WaitForEndOfFrame();            
             while (elapsed < duration)
             {
                 float x = Random.Range(-1f, 1f) * magnitude;

@@ -128,16 +128,15 @@ public class Enemy : MonoBehaviour
 
         if (currentHealth <= 0)                 //Hvis modstanderens liv er lig eller under 0
         {
-            StartCoroutine(die());              //Kør die() funktionen
+            die();              //Kør die() funktionen
         }
     }
 
-    IEnumerator die()                                  //Sker når modstanderens liv er lig eller under 0
+    public void die()                                  //Sker når modstanderens liv er lig eller under 0
     {
         hasTarget = false;
         target = null; 
         anim.SetBool("IsDead", true);                  //Spiller døds animationen  
-        yield return new WaitForSeconds(2);            //Vent 2 sekunder
         Destroy(gameObject);                           //Fjern modstanderen fra spillet
     }
 }

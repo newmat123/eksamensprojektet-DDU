@@ -21,7 +21,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Time.time >= nextAttackTime)                        //Hvis der er gået langt nok tid siden sidste angreb
         {
-            if (Input.GetKeyDown(KeyCode.F))                    //Hvis man trykker på "F"
+            if (Input.GetMouseButtonDown(0))                   //Hvis man trykker på "Venstreklik"
             {
                 Attack();                                       //Kører attack() funktionen
                 nextAttackTime = Time.time + 1f / attackRate;   //Sæt nextAttackTime til at være ligt med Time.time + 1f/2f
