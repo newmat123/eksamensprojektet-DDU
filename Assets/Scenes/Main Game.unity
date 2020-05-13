@@ -2379,7 +2379,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 246076030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44, y: 200, z: 0}
+  m_LocalPosition: {x: 44, y: 100, z: 0}
   m_LocalScale: {x: 50, y: 0.05, z: 1}
   m_Children: []
   m_Father: {fileID: 306696614}
@@ -2897,7 +2897,7 @@ MonoBehaviour:
   moveAmount: 10
   maxX: 75
   minX: -15
-  maxY: 195
+  maxY: 95
   room:
     serializedVersion: 2
     m_Bits: 256
@@ -7344,7 +7344,7 @@ MonoBehaviour:
   - {fileID: 5600819687085975728, guid: ff68627e20da2984b83d3d9f0c3aa276, type: 3}
   Loot:
   - {fileID: 6703467958242068013, guid: 0ea837572d02e5f4eb73473265307657, type: 3}
-  endPoint: {x: 89, y: 195, z: 0}
+  endPoint: {x: 89, y: 95, z: 0}
   upMove: 10
   enemysToSpawn: 3
   itemsToSpawn: 1
@@ -13530,7 +13530,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648182970}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 89, y: 195, z: 0}
+  m_LocalPosition: {x: 89, y: 95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
