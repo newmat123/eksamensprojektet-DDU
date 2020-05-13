@@ -116,7 +116,7 @@ public class Enemy : MonoBehaviour
 
     private void follow(Transform target)                                                                           //Sker når modstanderen har et mål
     {
-        rb.velocity = new Vector2((target.transform.position.x - transform.position.x)*speed*Time.deltaTime,0f);    // Gør så modstanderen følger efter spilleren
+        rb.velocity = new Vector2((target.transform.position.x - transform.position.x)*speed*Time.deltaTime, rb.velocity.y);    // Gør så modstanderen følger efter spilleren
     }
 
     public void TakeDamage(int damage)          //Sker når modstanderen bliver angrebet
@@ -138,11 +138,5 @@ public class Enemy : MonoBehaviour
         anim.SetBool("IsDead", true);                  //Spiller døds animationen  
         yield return new WaitForSeconds(2);            //Vent 2 sekunder
         Destroy(gameObject);                           //Fjern modstanderen fra spillet
-        
-
     }
-
-
-
-
 }
