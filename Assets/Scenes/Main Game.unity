@@ -1155,6 +1155,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1584864075 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6282429502420208521, guid: cfb0e0b2f7e8aab448d28fb5a7d14373,
+    type: 3}
+  m_PrefabInstance: {fileID: 2062666790}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db29b212397cfed4da6c2855d73fdc27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1648182970
 GameObject:
   m_ObjectHideFlags: 0
@@ -1442,7 +1454,7 @@ PrefabInstance:
         type: 3}
       propertyPath: healthBar
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1584864075}
     - target: {fileID: 3627326031521522621, guid: cfb0e0b2f7e8aab448d28fb5a7d14373,
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x

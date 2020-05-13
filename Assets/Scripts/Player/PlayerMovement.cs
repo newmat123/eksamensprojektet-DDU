@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();                    //Henter modstanderens animator, så komponentet kan ændres
         currentHealth = health;                             //Sætter modstanderens liv til variablen healths værdi
         rb = GetComponent<Rigidbody2D>();                   //Henter modstanderens Rigidbody, så komponentet kan ændres
-        //healthBar.SetMaxHealth(health);
+        healthBar.SetMaxHealth(health);
     }
     private void FixedUpdate()
     {
@@ -84,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log(damage);              //Viser hvor meget skade at spilleren tog i konsolen
         currentHealth -= damage;        //trækker skaden fra spillerens nuværende liv
-        //anim.SetTrigger("Hurt");        //Spiller skade animationen
+        anim.SetTrigger("Hurt");        //Spiller skade animationen
         healthBar.SetHealth(currentHealth);
 
         if (currentHealth <= 0)         //Hvis spillerens liv er lig eller under 0
@@ -100,8 +100,22 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(2);            //Vent 2 sekunder
         Destroy(gameObject);                           //Fjern spilleren fra spillet
         SceneManager.LoadScene("DeathScene");
+    }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.tag == "Health")
+        {
+            
+            currentHealth += 60;        //trækker skaden fra spillerens nuværende liv
+            if (currentHealth > 100)
+            {
+                currentHealth = 100;
+            }
+            healthBar.SetHealth(currentHealth);
 
+            Destroy(collision.gameObject);
+        }
     }
 
 }
