@@ -18,8 +18,6 @@ public class EnemySpawner : MonoBehaviour
 
     public LayerMask obj;
 
-    private int upCount = 0;
-
 
     void Start()
     {
