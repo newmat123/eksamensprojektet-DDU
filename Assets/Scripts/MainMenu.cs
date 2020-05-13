@@ -14,4 +14,11 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+    void Update()
+    { 
+        if (Input.GetKeyDown(KeyCode.Escape))                   //Hvis man trykker på "Venstreklik"
+        {
+            SceneManager.LoadScene(4);
+        }
+    }
 }
