@@ -117,6 +117,9 @@ public class PlayerMovement : MonoBehaviour
 
                 Destroy(collision.gameObject);
             }
+        }else if(collision.tag == "WinObj")
+        {
+            //win
         }
     }
 }
