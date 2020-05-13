@@ -29,9 +29,7 @@ public class EnemySpawner : MonoBehaviour
 
     void spawn(int xToSpawn, GameObject[] arr)
     {
-        int spawned = 0;
-
-        while (spawned < xToSpawn)
+        for(int i = 0; i < xToSpawn; i++)
         {
             float x = Random.Range(startPoint.x, endPoint.x);
             Vector2 spawnPoint = new Vector2(x, transform.position.y);
@@ -41,7 +39,6 @@ public class EnemySpawner : MonoBehaviour
             int rand = Random.Range(0, arr.Length);
 
             Instantiate(arr[rand], transform.position, Quaternion.identity);
-            spawned++;
         }
         return;
     }
