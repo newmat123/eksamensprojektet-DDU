@@ -2895,7 +2895,7 @@ MonoBehaviour:
   - {fileID: 4547080190194438437, guid: cd12db7f8cb2c6544b802517665108ba, type: 3}
   winObj: {fileID: 409098939308117156, guid: 0840daa14b53408468c3e276ec063e32, type: 3}
   moveAmount: 10
-  maxX: 75
+  maxX: 70
   minX: -15
   maxY: 95
   room:

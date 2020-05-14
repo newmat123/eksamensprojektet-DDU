@@ -180,7 +180,7 @@ public class MapGenerator : MonoBehaviour
             Instantiate(rooms[rand], transform.position, Quaternion.identity);
         }
 
-        if(transform.position.x < maxX)
+        if(transform.position.x < 75)
         {//kan vi fortsætte mod højre, gør vi det.
             Vector2 newPos = new Vector2(transform.position.x + (moveAmount * 3f), transform.position.y);
             transform.position = newPos;
@@ -191,7 +191,7 @@ public class MapGenerator : MonoBehaviour
             transform.position = newPos;
         }
 
-        if(transform.position.x <= maxX && transform.position.y <= maxY)
+        if(transform.position.x <= 75 && transform.position.y <= maxY)
         {//tjekker om vi er færdige, med at fylde ud.
             fillUp();
         }
